@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import PyramidScene from './PyramidScene';
 import './LandingPage.css';
@@ -11,9 +12,6 @@ import EventsSection from './sections/EventsSection';
 import CompetitionsSection from './sections/CompetitionsSection';
 import PastSpeakersSection from './sections/PastSpeakersSection';
 import CTASection from './sections/CTASection';
-import SponsorsSection from './sections/SponsorsSection';
-import ContactSection from './sections/ContactSection';
-import RegistrationSection from './sections/RegistrationSection';
 import FooterSection from './sections/FooterSection';
 
 const LandingPage = () => {
@@ -51,11 +49,11 @@ const LandingPage = () => {
             <a href="#events" className="nav-link">Events</a>
             <a href="#competitions" className="nav-link">Competitions</a>
             <a href="#speakers" className="nav-link">Speakers</a>
-            <a href="#sponsors" className="nav-link">Sponsors</a>
-            <a href="#contact" className="nav-link">Contact</a>
+            <Link to="/sponsors" className="nav-link">Sponsors</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
           </nav>
           <div className="nav-right">
-            <a href="https://unstop.com" target="_blank" rel="noopener noreferrer" className="register-btn-nav">Register Now</a>
+            <Link to="/register" className="register-btn-nav">Register Now</Link>
           </div>
         </header>
 
@@ -66,9 +64,9 @@ const LandingPage = () => {
             <div className="hero-divider"></div>
             <h2 className="hero-theme">ODYSSEY OF OPULENCE</h2>
             <p className="hero-date">31st JANUARY TO 1st FEBRUARY</p>
-            <a href="#register" className="hero-register-btn">
+            <Link to="/register" className="hero-register-btn">
               Register Now
-            </a>
+            </Link>
           </div>
         </main>
 
@@ -81,9 +79,6 @@ const LandingPage = () => {
             <CompetitionsSection />
             <PastSpeakersSection />
             <CTASection />
-            <SponsorsSection />
-            <ContactSection />
-            <RegistrationSection />
             <FooterSection />
           </div>
         </div>

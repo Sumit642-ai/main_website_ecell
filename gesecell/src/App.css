@@ -40,3 +40,65 @@
 .read-the-docs {
   color: var(--palette-gray);
 }
+
+.route-page {
+  min-height: 100vh;
+  background: #010102;
+  color: var(--palette-white);
+  padding-bottom: 4rem;
+}
+
+.route-page-hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem) 1rem;
+  text-align: left;
+}
+
+.route-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+}
+
+.route-kicker {
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.route-title {
+  margin: 0.35rem 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.route-subtitle {
+  margin: 0;
+  max-width: 720px;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+}
+
+.route-sections {
+  margin-top: 0;
+}
+
+@media (max-width: 720px) {
+  .route-page-hero {
+    text-align: center;
+  }
+
+  .route-back-link {
+    justify-content: center;
+  }
+}

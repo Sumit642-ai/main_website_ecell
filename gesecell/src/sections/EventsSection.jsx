@@ -1,12 +1,26 @@
 import React, { useMemo } from 'react';
 
 export default function EventsSection() {
-  const events = useMemo(
+  const eventFormats = useMemo(
     () => [
-      { title: 'Leadership Keynote', subtitle: 'Main stage', cta: 'Register' },
-      { title: 'Tech Frontier Panel', subtitle: 'Expert panel', cta: 'Register' },
-      { title: 'Tech Frontier Panel', subtitle: 'Deep dive', cta: 'Register' },
-      { title: 'Galaxy Keynote', subtitle: 'Special address', cta: 'Register' },
+      {
+        title: 'Keynote Sessions',
+        desc:
+          'Distinguished speakers deliver impactful addresses, providing insights, inspiration, and setting the tone for GES with their expertise in entrepreneurship.',
+        image: 'https://placehold.co/1200x700/0b0b0f/EB5002?text=Keynote+Sessions',
+      },
+      {
+        title: 'Workshops',
+        desc:
+          'Interactive sessions where participants engage in hands-on activities, fostering skill development, and practical knowledge in various aspects of entrepreneurship.',
+        image: 'https://placehold.co/1200x700/0b0b0f/EB5002?text=Workshops',
+      },
+      {
+        title: 'Fireside Chats',
+        desc:
+          'Intimate conversations between accomplished individuals, offering a relaxed platform to discuss personal experiences, challenges, and strategies in the entrepreneurial journey.',
+        image: 'https://placehold.co/1200x700/0b0b0f/EB5002?text=Fireside+Chats',
+      },
     ],
     [],
   );
@@ -14,20 +28,27 @@ export default function EventsSection() {
   return (
     <section id="events">
       <div className="section-title">Events</div>
-      <div className="grid-4">
-        {events.map((it, idx) => (
-          <div key={`${it.title}-${idx}`} className="card star-bg">
-            <div className="card-top">
-              <div>
-                <h3 className="card-title">{it.title}</h3>
-                <p className="card-subtitle">{it.subtitle}</p>
-              </div>
-              <span className="badge">Event</span>
+
+      <div className="grid-3">
+        {eventFormats.map((item) => (
+          <article key={item.title} className="event-feature-card">
+            <h3 className="event-feature-title">{item.title}</h3>
+
+            <div className="event-feature-media">
+              <img
+                className="event-feature-image"
+                src={item.image}
+                alt={item.title}
+                loading="lazy"
+              />
             </div>
-            <div className="card-actions">
-              <a className="primary-btn" href="#register">{it.cta}</a>
-            </div>
-          </div>
+
+            <p className="event-feature-desc">{item.desc}</p>
+
+            <a href="#" className="event-feature-link">
+              Read more <span className="event-feature-arrow">→</span>
+            </a>
+          </article>
         ))}
       </div>
     </section>
