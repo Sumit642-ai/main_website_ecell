@@ -1,0 +1,104 @@
+.landing-page-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--palette-black);
+  color: var(--palette-white);
+  font-family: 'Inter', sans-serif; /* Clean sans-serif */
+}
+
+.pyramid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none; /* Let clicks pass through to 3D scene if needed, but enable for interactive elements */
+}
+
+.content-overlay > * {
+  pointer-events: auto;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: var(--palette-gray);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize; /* As per image */
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+
+.nav-link:hover {
+  color: var(--palette-orange);
+}
+
+.nav-link.active {
+  color: var(--palette-orange);
+  border-bottom: 2px solid var(--palette-orange);
+  padding-bottom: 4px;
+}
+
+.hero-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 10vh; /* Visual balance */
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 1px;
+  color: var(--palette-white);
+  text-shadow: 0 0 22px rgba(193, 8, 1, 0.35), 0 0 42px rgba(235, 80, 2, 0.25);
+  z-index: 20;
+  opacity: 0; /* For GSAP animation */
+  transform: translateY(20px); /* For GSAP animation */
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+  color: rgba(167, 167, 167, 0.95);
+  text-shadow: 0 0 14px rgba(0, 0, 0, 0.85);
+  opacity: 0; /* For GSAP animation */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .header-nav {
+    gap: 1.5rem;
+  }
+}
