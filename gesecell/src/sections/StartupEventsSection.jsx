@@ -1,32 +1,51 @@
 import React, { useMemo } from 'react';
 
 export default function StartupEventsSection() {
-  const startupEvents = useMemo(
+  const events = useMemo(
     () => [
-      { title: 'Pitch Orbit', subtitle: 'Founder matchmaking' },
-      { title: 'Galaxy Mixer', subtitle: 'Networking night' },
-      { title: 'Galaxy Mixer', subtitle: 'Industry connects' },
-      { title: 'Pitch Orbit', subtitle: 'Lightning pitches' },
+      {
+        title: 'Intern Carnival',
+        desc:
+          "Intern Carnival is a curated event providing startups an exciting opportunity to hire interns from a pool of talented IIT Kharagpur students and enthusiastic GES '24 participants.",
+        image: 'https://placehold.co/1200x700/1a1a1a/EB5002?text=Intern+Carnival',
+      },
+      {
+        title: 'Investor Startup Connect',
+        desc:
+          'Provides opportunities to startups for funding and mentoring by industry experts, with a chance to pitch to investors from varied sectors and top VCs from the country and even abroad!',
+        image: 'https://placehold.co/1200x700/1a1a1a/EB5002?text=Investor+Connect',
+      },
+      {
+        title: 'Product Expo',
+        desc:
+          'Showcase your innovative products in front of a vast audience comprising the tech-savvy generation of students, eminent entrepreneurs, industry leaders, and professors.',
+        image: 'https://placehold.co/1200x700/1a1a1a/EB5002?text=Product+Expo',
+      },
     ],
     [],
   );
 
   return (
-    <section id="startup-events">
-      <div className="section-title">Startup Events</div>
-      <div className="grid-4">
-        {startupEvents.map((it, idx) => (
-          <div key={`${it.title}-${idx}`} className="card star-bg">
-            <div className="card-top">
-              <div>
-                <h3 className="card-title">{it.title}</h3>
-                <p className="card-subtitle">{it.subtitle}</p>
+    <section id="startup-events" className="startup-stack-section">
+      <div className="section-title" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+        Startup Events
+      </div>
+
+      <div className="startup-stack">
+        {events.map((event, idx) => (
+          <div key={event.title} className="startup-stack-item" style={{ '--i': idx }}>
+            <article className="startup-stack-card">
+              <div className="startup-stack-media">
+                <img src={event.image} alt={event.title} className="startup-stack-image" />
               </div>
-              <span className="badge">Startup</span>
-            </div>
-            <div className="card-actions">
-              <a className="secondary-btn" href="#register">Register</a>
-            </div>
+              <div className="startup-stack-body">
+                <h3 className="startup-stack-title">{event.title}</h3>
+                <p className="startup-stack-desc">{event.desc}</p>
+                <a href="#" className="startup-stack-link">
+                  Read more <span className="startup-stack-arrow">→</span>
+                </a>
+              </div>
+            </article>
           </div>
         ))}
       </div>
