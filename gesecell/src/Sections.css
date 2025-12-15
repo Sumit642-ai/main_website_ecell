@@ -635,18 +635,17 @@
   }
 }
 
-/* Scroll Stack Section - GSAP ScrollTrigger Style */
+/* Scroll Stack Section - Full Page Stacking Cards */
 .scroll-stack-section {
-  padding: 6rem 2rem 2rem;
+  padding: 0;
   position: relative;
-  overflow: hidden;
-  isolation: isolate;
+  background: var(--palette-black);
 }
 
 /* Header */
 .scroll-stack-header {
   text-align: center;
-  margin-bottom: 4rem;
+  padding: 4rem 2rem 2rem;
   position: relative;
   z-index: 10;
 }
@@ -667,7 +666,7 @@
 
 .scroll-stack-title {
   margin: 0 0 0.75rem;
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 900;
   background: linear-gradient(135deg, #ffffff 0%, var(--palette-orange) 100%);
   -webkit-background-clip: text;
@@ -677,7 +676,7 @@
 
 .scroll-stack-subtitle {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.5);
   max-width: 500px;
   margin: 0 auto;
@@ -685,50 +684,51 @@
 
 /* Stack Container */
 .scroll-stack-container {
-  max-width: 1000px;
-  margin: 0 auto;
   position: relative;
-  padding: 0 1rem;
-  padding-bottom: 2rem;
 }
 
-/* Stack Card - GSAP will handle pinning */
+/* Stack Card - Full viewport height, sticky stacking */
 .scroll-stack-card {
-  position: relative;
+  position: sticky;
+  top: calc(var(--card-index) * 40px + 80px); /* Added offset for stacking visibility */
+  height: 100vh;
   width: 100%;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
   z-index: calc(var(--card-index) + 1);
-}
-
-.scroll-stack-card:last-child {
-  margin-bottom: 0;
 }
 
 /* Card Inner Container */
 .scroll-stack-card-inner {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  min-height: 420px;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  max-height: 80vh;
   padding: 2.5rem;
   background: var(--card-color);
   border-radius: 32px;
   overflow: hidden;
   position: relative;
   box-shadow: 
-    0 -10px 40px rgba(0, 0, 0, 0.3),
-    0 20px 60px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    0 -10px 50px rgba(0, 0, 0, 0.5),
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
               box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scroll-stack-card:hover .scroll-stack-card-inner {
-  transform: translateY(-5px);
+  transform: scale(1.01);
   box-shadow: 
-    0 -10px 50px rgba(0, 0, 0, 0.4),
-    0 30px 80px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+    0 -10px 60px rgba(0, 0, 0, 0.6),
+    0 40px 100px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset;
 }
 
 /* Content Section */
@@ -744,10 +744,9 @@
 .scroll-stack-number {
   font-size: 5rem;
   font-weight: 900;
-  color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.1);
   line-height: 1;
   margin-bottom: 1rem;
-  font-family: inherit;
 }
 
 .scroll-stack-card-title {
@@ -756,22 +755,21 @@
   font-weight: 900;
   letter-spacing: -0.5px;
   color: #ffffff;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .scroll-stack-card-desc {
-  margin: 1.25rem 0 0;
+  margin: 1rem 0 0;
   color: rgba(255, 255, 255, 0.85);
   font-size: 1rem;
   line-height: 1.7;
-  max-width: 450px;
 }
 
 .scroll-stack-link {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   padding: 0.9rem 1.8rem;
   background: rgba(0, 0, 0, 0.3);
   border: 2px solid rgba(255, 255, 255, 0.3);
@@ -781,8 +779,8 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   width: fit-content;
 }
@@ -796,11 +794,10 @@
 .scroll-stack-link:hover {
   background: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.6);
-  transform: translateX(5px);
 }
 
 .scroll-stack-link:hover svg {
-  transform: translateX(5px);
+  transform: translateX(4px);
 }
 
 /* Visual Section */
@@ -810,7 +807,6 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .scroll-stack-visual img {
@@ -818,7 +814,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.5s ease;
 }
 
 .scroll-stack-card:hover .scroll-stack-visual img {
@@ -827,12 +823,16 @@
 
 /* Responsive */
 @media (max-width: 900px) {
+  .scroll-stack-card {
+    height: 100vh;
+    padding: 1.5rem;
+  }
+  
   .scroll-stack-card-inner {
     grid-template-columns: 1fr;
-    grid-template-rows: auto 200px;
     gap: 1.5rem;
     padding: 2rem;
-    min-height: auto;
+    max-height: 90vh;
   }
   
   .scroll-stack-content {
@@ -846,26 +846,30 @@
   
   .scroll-stack-number {
     font-size: 3.5rem;
-    margin-bottom: 0.5rem;
   }
   
   .scroll-stack-card-title {
     font-size: 1.6rem;
   }
+  
+  .scroll-stack-card-desc {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 600px) {
-  .scroll-stack-section {
-    padding: 4rem 1rem 2rem;
+  .scroll-stack-header {
+    padding: 3rem 1rem 1.5rem;
   }
   
-  .scroll-stack-container {
-    padding: 0;
+  .scroll-stack-card {
+    padding: 1rem;
   }
   
   .scroll-stack-card-inner {
     padding: 1.5rem;
     border-radius: 24px;
+    gap: 1rem;
   }
   
   .scroll-stack-number {
@@ -873,16 +877,21 @@
   }
   
   .scroll-stack-card-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
   
   .scroll-stack-card-desc {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
   }
   
   .scroll-stack-link {
-    padding: 0.75rem 1.4rem;
-    font-size: 0.75rem;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.7rem;
+  }
+  
+  .scroll-stack-visual {
+    height: 160px;
   }
 }
 
