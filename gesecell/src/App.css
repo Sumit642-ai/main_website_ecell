@@ -48,6 +48,10 @@
   padding-bottom: 4rem;
 }
 
+.route-page-fullscreen {
+  padding-bottom: 0;
+}
+
 .route-page-hero {
   max-width: 960px;
   margin: 0 auto;

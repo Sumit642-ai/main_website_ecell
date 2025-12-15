@@ -7,6 +7,20 @@ const getInitials = (name) =>
     .map((chunk) => chunk[0]?.toUpperCase())
     .join('');
 
+// Predefined gradient colors for variety
+const avatarColors = [
+  { bg: 'linear-gradient(135deg, #f59e0b, #d97706)', glow: 'rgba(245, 158, 11, 0.4)' },
+  { bg: 'linear-gradient(135deg, #ec4899, #db2777)', glow: 'rgba(236, 72, 153, 0.4)' },
+  { bg: 'linear-gradient(135deg, #10b981, #059669)', glow: 'rgba(16, 185, 129, 0.4)' },
+  { bg: 'linear-gradient(135deg, #8b5cf6, #7c3aed)', glow: 'rgba(139, 92, 246, 0.4)' },
+  { bg: 'linear-gradient(135deg, #3b82f6, #2563eb)', glow: 'rgba(59, 130, 246, 0.4)' },
+  { bg: 'linear-gradient(135deg, #ef4444, #dc2626)', glow: 'rgba(239, 68, 68, 0.4)' },
+  { bg: 'linear-gradient(135deg, #14b8a6, #0d9488)', glow: 'rgba(20, 184, 166, 0.4)' },
+  { bg: 'linear-gradient(135deg, #f97316, #ea580c)', glow: 'rgba(249, 115, 22, 0.4)' },
+  { bg: 'linear-gradient(135deg, #a855f7, #9333ea)', glow: 'rgba(168, 85, 247, 0.4)' },
+  { bg: 'linear-gradient(135deg, #06b6d4, #0891b2)', glow: 'rgba(6, 182, 212, 0.4)' },
+];
+
 export default function PastSpeakersSection() {
   const speakers = useMemo(
     () => [
@@ -58,38 +72,53 @@ export default function PastSpeakersSection() {
   const rows = [speakers.slice(0, midpoint), speakers.slice(midpoint)];
 
   return (
-    <section id="speakers" className="speaker-section">
-      <div className="section-title" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-        Past Speakers
+    <section id="speakers" className="speakers-scene">
+      <div className="speakers-header">
+        <span className="speakers-badge">Legacy</span>
+        <h2 className="speakers-title">Past Speakers</h2>
+        <p className="speakers-subtitle">Industry titans who have graced our summit</p>
       </div>
-      <div className="speaker-marquee">
-        {rows.map((row, rowIdx) => {
-          const extendedRow = [...row, ...row];
-          return (
-            <div
-              key={`speaker-row-${rowIdx}`}
-              className={`speaker-row${rowIdx % 2 === 1 ? ' reverse' : ''}`}
-              data-speed={rowIdx % 2 === 0 ? 'fast' : 'slow'}
-            >
-              <div className="speaker-track">
-                {extendedRow.map((speaker, idx) => (
-                  <div
-                    key={`${speaker.name}-${rowIdx}-${idx}`}
-                    className="speaker-chip"
-                    style={{ '--speaker-hue': `${(idx * 37 + rowIdx * 53) % 360}` }}
-                    aria-hidden={idx >= row.length}
-                  >
-                    <div className="speaker-chip-avatar">{getInitials(speaker.name)}</div>
-                    <div className="speaker-chip-body">
-                      <p className="speaker-chip-name">{speaker.name}</p>
-                      <p className="speaker-chip-role">{speaker.role}</p>
-                    </div>
-                  </div>
-                ))}
+      
+      <div className="speakers-marquee-container">
+        <div className="speakers-marquee-card">
+          {rows.map((row, rowIdx) => {
+            const extendedRow = [...row, ...row];
+            return (
+              <div
+                key={`speaker-row-${rowIdx}`}
+                className={`speakers-marquee-row${rowIdx % 2 === 1 ? ' reverse' : ''}`}
+              >
+                <div className="speakers-marquee-track">
+                  {extendedRow.map((speaker, idx) => {
+                    const colorIdx = (idx + rowIdx * 7) % avatarColors.length;
+                    const color = avatarColors[colorIdx];
+                    return (
+                      <div
+                        key={`${speaker.name}-${rowIdx}-${idx}`}
+                        className="speaker-pill"
+                        aria-hidden={idx >= row.length}
+                      >
+                        <div 
+                          className="speaker-pill-avatar"
+                          style={{ 
+                            background: color.bg,
+                            boxShadow: `0 0 20px ${color.glow}`
+                          }}
+                        >
+                          {getInitials(speaker.name)}
+                        </div>
+                        <div className="speaker-pill-info">
+                          <span className="speaker-pill-name">{speaker.name}</span>
+                          <span className="speaker-pill-role">{speaker.role}</span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
