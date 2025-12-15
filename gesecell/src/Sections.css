@@ -699,6 +699,7 @@
   padding: 2rem;
   box-sizing: border-box;
   z-index: calc(var(--card-index) + 1);
+  background: var(--palette-black);
 }
 
 /* Card Inner Container */
