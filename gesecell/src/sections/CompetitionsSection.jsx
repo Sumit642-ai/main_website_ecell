@@ -1,4 +1,8 @@
 import React, { useMemo } from 'react';
+import rdSymposiumImg from '../assets/competition/RD.jpg';
+import investImg from '../assets/competition/invest-o-spective.jpg';
+import businessGameImg from '../assets/competition/businessgame.jpg';
+import empresarioImg from '../assets/competition/empresario.jpg';
 
 export default function CompetitionsSection() {
   const competitions = useMemo(
@@ -8,28 +12,28 @@ export default function CompetitionsSection() {
         highlight: 'Incentives • 5L+',
         desc:
           'The R&D Symposium bridges entrepreneurship with research, empowering scholars to transform their work into real-life applications while advancing their research.',
-        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80',
+        image: rdSymposiumImg,
       },
       {
         title: 'Invest-O-Spective',
         highlight: 'Prize Money • 1L+',
         desc:
           'A unique competition to explore startup analysis for informed investment decisions while showcasing your analytical, communication, and presentation skills.',
-        image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80',
+        image: investImg,
       },
       {
         title: 'Business Game',
         highlight: 'Prize Money • 2L+',
         desc:
           'Make high-stakes business calls under pressure. Compete in immersive simulations that test your strategy, presence of mind, and ability to lead teams through ambiguity.',
-        image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=900&q=80',
+        image: businessGameImg,
       },
       {
         title: 'Empresario',
         highlight: 'Prize Money • 1Cr+',
         desc:
           "Empresario, IIT Kharagpur's annual business model competition, offers mentorship and a platform to pitch ideas to venture capitalists, angel investors, and industry leaders.",
-        image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80',
+        image: empresarioImg,
       },
     ],
     [],

@@ -1,4 +1,7 @@
 import React, { useMemo } from 'react';
+import internCarnivalImg from '../assets/initiatives/ini1.jpeg';
+import investorConnectImg from '../assets/initiatives/ini2.avif';
+import productExpoImg from '../assets/initiatives/ini3.jpg';
 
 export default function StartupEventsSection() {
   const events = useMemo(
@@ -7,21 +10,21 @@ export default function StartupEventsSection() {
         title: 'Intern Carnival',
         desc:
           "Intern Carnival is a curated event providing startups an exciting opportunity to hire interns from a pool of talented IIT Kharagpur students and enthusiastic GES '24 participants.",
-        image: 'https://placehold.co/600x350/1a1a1a/EB5002?text=Intern+Carnival',
+        image: internCarnivalImg,
         color: '#eb5002',
       },
       {
         title: 'Investor Startup Connect',
         desc:
           'Provides opportunities to startups for funding and mentoring by industry experts, with a chance to pitch to investors from varied sectors and top VCs from the country and even abroad!',
-        image: 'https://placehold.co/600x350/1a1a1a/c10801?text=Investor+Connect',
+        image: investorConnectImg,
         color: '#c10801',
       },
       {
         title: 'Product Expo',
         desc:
           'Showcase your innovative products in front of a vast audience comprising the tech-savvy generation of students, eminent entrepreneurs, industry leaders, and professors.',
-        image: 'https://placehold.co/600x350/1a1a1a/dc3a3b?text=Product+Expo',
+        image: productExpoImg,
         color: '#dc3a3b',
       },
     ],

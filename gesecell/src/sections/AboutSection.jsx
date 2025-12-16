@@ -1,4 +1,7 @@
 import React from 'react';
+import aboutHero from '../assets/about/ges2.png';
+import aboutLeaders from '../assets/about/ges3.png';
+import aboutFuture from '../assets/about/ges4.jpg';
 
 export default function AboutSection() {
   return (
@@ -9,9 +12,9 @@ export default function AboutSection() {
         
         {/* Block 1 */}
         <div className="about-grid">
-          <div className="about-image">
-             <img src="https://placehold.co/600x400/222/EB5002?text=About+GES" alt="About GES" />
-          </div>
+           <div className="about-image">
+             <img src={aboutHero} alt="Attendees gathered at GES" />
+           </div>
           <div className="about-content">
             <div className="panel-kicker" style={{ color: 'var(--palette-orange)', marginBottom: '0.5rem' }}>Fueling Ideas</div>
             <h3>About GES?</h3>
@@ -23,9 +26,9 @@ export default function AboutSection() {
 
         {/* Block 2 - Reverse */}
         <div className="about-grid reverse">
-          <div className="about-image">
-             <img src="https://placehold.co/600x400/222/EB5002?text=Connecting+Leaders" alt="Connecting Leaders" />
-          </div>
+           <div className="about-image">
+             <img src={aboutLeaders} alt="Speakers connecting with participants" />
+           </div>
           <div className="about-content">
             <div className="panel-kicker" style={{ color: 'var(--palette-orange)', marginBottom: '0.5rem' }}>Connecting Leaders</div>
             <h3>A Hub for Visionaries</h3>
@@ -37,9 +40,9 @@ export default function AboutSection() {
 
         {/* Block 3 */}
         <div className="about-grid">
-          <div className="about-image">
-             <img src="https://placehold.co/600x400/222/EB5002?text=Shaping+Tomorrow" alt="Shaping Tomorrow" />
-          </div>
+           <div className="about-image">
+             <img src={aboutFuture} alt="Stage lighting at GES" />
+           </div>
           <div className="about-content">
             <div className="panel-kicker" style={{ color: 'var(--palette-orange)', marginBottom: '0.5rem' }}>Shaping Tomorrow</div>
             <h3>Empowering the Future</h3>

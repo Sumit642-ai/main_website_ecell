@@ -1,4 +1,7 @@
 import React, { useMemo } from 'react';
+import keynoteImg from '../assets/events/event1.png';
+import workshopImg from '../assets/events/event2.png';
+import firesideImg from '../assets/events/event3.png';
 
 export default function EventsSection() {
   const eventFormats = useMemo(
@@ -7,19 +10,19 @@ export default function EventsSection() {
         title: 'Keynote Sessions',
         desc:
           'Distinguished speakers deliver impactful addresses, providing insights, inspiration, and setting the tone for GES with their expertise in entrepreneurship.',
-        image: 'https://placehold.co/1200x700/0b0b0f/EB5002?text=Keynote+Sessions',
+        image: keynoteImg,
       },
       {
         title: 'Workshops',
         desc:
           'Interactive sessions where participants engage in hands-on activities, fostering skill development, and practical knowledge in various aspects of entrepreneurship.',
-        image: 'https://placehold.co/1200x700/0b0b0f/EB5002?text=Workshops',
+        image: workshopImg,
       },
       {
         title: 'Fireside Chats',
         desc:
           'Intimate conversations between accomplished individuals, offering a relaxed platform to discuss personal experiences, challenges, and strategies in the entrepreneurial journey.',
-        image: 'https://placehold.co/1200x700/0b0b0f/EB5002?text=Fireside+Chats',
+        image: firesideImg,
       },
     ],
     [],

@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import PyramidScene from './PyramidScene';
 import './LandingPage.css';
 import './Sections.css';
+import gesLogo from './assets/ges.png';
 
 import AboutSection from './sections/AboutSection';
 import ImpactStripSection from './sections/ImpactStripSection';
@@ -42,7 +43,9 @@ const LandingPage = () => {
       <div className="content-overlay">
         <header className="header-nav">
           <div className="nav-left">
-            <div className="nav-logo">GES E-CELL</div>
+            <Link to="/" className="nav-logo" aria-label="GES E-Cell home">
+              <img src={gesLogo} alt="GES E-Cell logo" />
+            </Link>
           </div>
           <nav className="nav-center">
             <a href="#about" className="nav-link">About</a>

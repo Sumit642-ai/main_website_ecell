@@ -3,80 +3,165 @@ import RegistrationSun from './RegistrationSun';
 
 export default function RegistrationSection() {
   const [activeTab, setActiveTab] = useState('student');
+  const [step, setStep] = useState(1);
+
+  const roles = [
+    { id: 'student', label: 'Student', icon: '🎓' },
+    { id: 'professor', label: 'Professor', icon: '📚' },
+    { id: 'startup', label: 'Startup', icon: '🚀' },
+  ];
 
   return (
-    <section id="register" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
-      <div className="registration-container" style={{ display: 'flex', width: '100%', maxWidth: '1400px', margin: '0 auto', height: '80vh', background: 'rgba(0,0,0,0.8)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden' }}>
-        
-        {/* Left Side - Sun Animation */}
-        <div className="registration-visual" style={{ flex: 1, position: 'relative', overflow: 'hidden' }}>
-           <div style={{ position: 'absolute', top: '50%', left: '-30%', width: '160%', height: '160%', transform: 'translateY(-50%)' }}>
-             <RegistrationSun />
-           </div>
-           <div style={{ position: 'absolute', bottom: '2rem', left: '2rem', zIndex: 10 }}>
-             <h2 style={{ fontSize: '3rem', fontFamily: 'Cinzel, serif', margin: 0, color: '#fff' }}>JOIN THE<br/>REVOLUTION</h2>
-           </div>
+    <section className="registration-section">
+      {/* Left Side - Half Sun */}
+      <div className="registration-sun-side">
+        <div className="registration-sun-container">
+          <RegistrationSun />
         </div>
+        <div className="registration-sun-overlay">
+          <div className="registration-pill">Odyssey of Opulence</div>
+          <h2 className="registration-sun-title">
+            Step into the<br />Summit Orbit
+          </h2>
+          <p className="registration-sun-subtitle">
+            Unlock priority seats for workshops, investor connects, and startup showcases.
+          </p>
 
-        {/* Right Side - Form */}
-        <div className="registration-form-wrapper" style={{ flex: 1, padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: 'rgba(20,20,20,0.95)', backdropFilter: 'blur(10px)' }}>
-          
-          <div className="form-header" style={{ marginBottom: '2rem', textAlign: 'center' }}>
-            <h3 style={{ fontSize: '2rem', fontFamily: 'Montserrat, sans-serif', marginBottom: '0.5rem', color: '#fff' }}>REGISTER NOW</h3>
-            <p style={{ color: 'rgba(255,255,255,0.6)' }}>Secure your spot at the summit</p>
+          <div className="registration-sun-stats">
+            <div className="registration-sun-stat">
+              <span className="stat-value">10K+</span>
+              <span className="stat-label">Attendees</span>
+            </div>
+            <div className="registration-sun-stat">
+              <span className="stat-value">120+</span>
+              <span className="stat-label">Speakers</span>
+            </div>
+            <div className="registration-sun-stat">
+              <span className="stat-value">48 hrs</span>
+              <span className="stat-label">Non-stop</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Side - Form */}
+      <div className="registration-form-side">
+        <div className="registration-form-container">
+          <div className="registration-form-header">
+            <div className="registration-badge">Limited priority slots</div>
+            <h3 className="registration-form-title">Claim your summit pass</h3>
+            <p className="registration-form-subtitle">Choose your track and tell us how to tailor your experience.</p>
           </div>
 
-          {/* Custom Switch */}
-          <div className="role-switch" style={{ display: 'flex', background: 'rgba(255,255,255,0.05)', padding: '0.3rem', borderRadius: '50px', marginBottom: '2rem', position: 'relative' }}>
-            {['student', 'professor', 'startup'].map((role) => (
+          <div className="registration-steps">
+            {[1, 2].map((s) => (
+              <div key={s} className={`registration-step ${step === s ? 'active' : ''}`}>
+                <span className="registration-step-dot" />
+                <span className="registration-step-label">{s === 1 ? 'Basics' : 'Goals'}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Role Selector */}
+          <div className="registration-role-selector">
+            {roles.map((role) => (
               <button
-                key={role}
-                onClick={() => setActiveTab(role)}
-                style={{
-                  flex: 1,
-                  padding: '0.8rem',
-                  border: 'none',
-                  background: activeTab === role ? 'var(--palette-orange)' : 'transparent',
-                  color: activeTab === role ? '#fff' : 'rgba(255,255,255,0.6)',
-                  borderRadius: '50px',
-                  cursor: 'pointer',
-                  textTransform: 'uppercase',
-                  fontWeight: '700',
-                  fontSize: '0.8rem',
-                  transition: 'all 0.3s ease',
-                  fontFamily: 'Montserrat, sans-serif'
-                }}
+                key={role.id}
+                type="button"
+                className={`registration-role-btn ${activeTab === role.id ? 'active' : ''}`}
+                onClick={() => setActiveTab(role.id)}
               >
-                {role}
+                <span className="registration-role-icon">{role.icon}</span>
+                <span className="registration-role-label">{role.label}</span>
               </button>
             ))}
           </div>
 
-          <form className="form" onSubmit={(e) => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-              <input className="field" placeholder="First Name" style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff' }} />
-              <input className="field" placeholder="Last Name" style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff' }} />
-            </div>
-            
-            <input className="field" placeholder="Email Address" type="email" style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff' }} />
-            
-            {activeTab === 'student' && (
-              <input className="field" placeholder="University / College" style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff' }} />
-            )}
-            
-            {activeTab === 'professor' && (
-              <input className="field" placeholder="Department / Institution" style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff' }} />
-            )}
-            
-            {activeTab === 'startup' && (
-              <input className="field" placeholder="Startup Name" style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff' }} />
+          {/* Form Fields */}
+          <form className="registration-form" onSubmit={(e) => e.preventDefault()}>
+            {step === 1 && (
+              <>
+                <div className="registration-form-grid">
+                  <div className="registration-field">
+                    <label className="registration-label">First Name</label>
+                    <input type="text" className="registration-input" placeholder="John" />
+                  </div>
+                  <div className="registration-field">
+                    <label className="registration-label">Last Name</label>
+                    <input type="text" className="registration-input" placeholder="Doe" />
+                  </div>
+                </div>
+
+                <div className="registration-field">
+                  <label className="registration-label">Email Address</label>
+                  <input type="email" className="registration-input" placeholder="john@example.com" />
+                </div>
+
+                <div className="registration-field">
+                  <label className="registration-label">Phone Number</label>
+                  <input type="tel" className="registration-input" placeholder="+91 98765 43210" />
+                </div>
+
+                <button type="button" className="registration-submit-btn" onClick={() => setStep(2)}>
+                  <span>Next: goals</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </>
             )}
 
-            <input className="field" placeholder="Phone Number" style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff' }} />
+            {step === 2 && (
+              <>
+                {activeTab === 'student' && (
+                  <div className="registration-field">
+                    <label className="registration-label">University / College</label>
+                    <input type="text" className="registration-input" placeholder="IIT Kharagpur" />
+                  </div>
+                )}
 
-            <button className="primary-btn" type="submit" style={{ marginTop: '1rem', padding: '1rem', background: 'var(--palette-orange)', border: 'none', borderRadius: '8px', color: '#fff', fontWeight: '800', textTransform: 'uppercase', cursor: 'pointer', fontSize: '1rem' }}>
-              Register as {activeTab}
-            </button>
+                {activeTab === 'professor' && (
+                  <div className="registration-field">
+                    <label className="registration-label">Department / Institution</label>
+                    <input type="text" className="registration-input" placeholder="Department of Computer Science" />
+                  </div>
+                )}
+
+                {activeTab === 'startup' && (
+                  <div className="registration-field">
+                    <label className="registration-label">Startup Name</label>
+                    <input type="text" className="registration-input" placeholder="Your Startup Inc." />
+                  </div>
+                )}
+
+                <div className="registration-field">
+                  <label className="registration-label">What do you want to achieve?</label>
+                  <textarea className="registration-input registration-textarea" rows="3" placeholder="Networking with investors, showcasing product, hiring interns..." />
+                </div>
+
+                <div className="registration-field registration-checkbox-row">
+                  <label className="registration-checkbox">
+                    <input type="checkbox" defaultChecked />
+                    <span className="checkbox-custom" />
+                    <span className="checkbox-label">Keep me posted about speaker drops and masterclasses.</span>
+                  </label>
+                </div>
+
+                <div className="registration-actions">
+                  <button type="button" className="registration-secondary-btn" onClick={() => setStep(1)}>
+                    Back
+                  </button>
+                  <button type="submit" className="registration-submit-btn">
+                    <span>Register as {roles.find(r => r.id === activeTab)?.label}</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+
+                <p className="registration-footnote">By registering you agree to our code of conduct and consent to receive event updates.</p>
+              </>
+            )}
           </form>
         </div>
       </div>

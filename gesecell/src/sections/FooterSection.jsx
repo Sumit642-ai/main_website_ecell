@@ -1,19 +1,20 @@
 import React, { useMemo } from 'react';
+import gesLogo from '../assets/ges.png';
 
 export default function FooterSection() {
   const navColumns = useMemo(
     () => [
       [
-        { label: 'Home', href: '#top' },
-        { label: 'About', href: '#about' },
-        { label: 'Competitions', href: '#competitions' },
-        { label: 'Sponsors', href: '#sponsors' },
+        { label: 'Home', href: '/' },
+        { label: 'About', href: '/#about' },
+        { label: 'Competitions', href: '/#competitions' },
+        { label: 'Sponsors', href: '/sponsors' },
       ],
       [
-        { label: 'Events', href: '#events' },
-        { label: 'Speakers', href: '#speakers' },
-        { label: 'Contact', href: '#contact' },
-        { label: 'Register', href: '#register' },
+        { label: 'Events', href: '/#events' },
+        { label: 'Speakers', href: '/#speakers' },
+        { label: 'Contact', href: '/contact' },
+        { label: 'Register', href: '/register' },
       ],
     ],
     [],
@@ -33,7 +34,9 @@ export default function FooterSection() {
       <div className="footer-constellation-glow" aria-hidden="true" />
       <div className="footer-constellation-grid">
         <div className="footer-brand">
-          <div className="footer-logo">GES E-CELL</div>
+          <div className="footer-logo" aria-label="GES E-Cell logo">
+            <img src={gesLogo} alt="GES E-Cell logo" />
+          </div>
           <p className="footer-tagline">Join us to inspire innovation</p>
           <form className="footer-form" onSubmit={(evt) => evt.preventDefault()}>
             <label className="sr-only" htmlFor="footer-email">Email address</label>
