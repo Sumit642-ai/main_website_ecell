@@ -87,7 +87,7 @@ const LandingPage = () => {
             <div className="hero-year">2026</div>
             <div className="hero-divider"></div>
             <h2 className="hero-theme">ODYSSEY OF OPULENCE</h2>
-            <p className="hero-date">31st JANUARY TO 1st FEBRUARY</p>
+            <p className="hero-date">30st JANUARY TO 1st FEBRUARY</p>
             <Link to="/register" className="hero-register-btn">
               Register Now
             </Link>
