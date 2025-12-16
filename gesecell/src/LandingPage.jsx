@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import PyramidScene from './PyramidScene';
@@ -18,6 +18,7 @@ import FooterSection from './sections/FooterSection';
 const LandingPage = () => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
+  const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
@@ -41,20 +42,39 @@ const LandingPage = () => {
       
       {/* 2D Content Overlay */}
       <div className="content-overlay">
-        <header className="header-nav">
+        <header className={`header-nav ${navOpen ? 'nav-open' : ''}`}>
           <div className="nav-left">
             <Link to="/" className="nav-logo" aria-label="GES E-Cell home">
               <img src={gesLogo} alt="GES E-Cell logo" />
             </Link>
           </div>
+
+          <button
+            className={`mobile-nav-toggle ${navOpen ? 'is-open' : ''}`}
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded={navOpen}
+            onClick={() => setNavOpen((open) => !open)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
           <nav className="nav-center">
-            <a href="#about" className="nav-link">About</a>
-            <a href="#events" className="nav-link">Events</a>
-            <a href="#competitions" className="nav-link">Competitions</a>
-            <a href="#speakers" className="nav-link">Speakers</a>
-            <Link to="/sponsors" className="nav-link">Sponsors</Link>
-            <Link to="/contact" className="nav-link">Contact</Link>
+            <a href="#about" className="nav-link" onClick={() => setNavOpen(false)}>About</a>
+            <a href="#events" className="nav-link" onClick={() => setNavOpen(false)}>Events</a>
+            <a href="#competitions" className="nav-link" onClick={() => setNavOpen(false)}>Competitions</a>
+            <a href="#speakers" className="nav-link" onClick={() => setNavOpen(false)}>Speakers</a>
+            <Link to="/sponsors" className="nav-link" onClick={() => setNavOpen(false)}>Sponsors</Link>
+            <Link to="/contact" className="nav-link" onClick={() => setNavOpen(false)}>Contact</Link>
+            <div className="nav-mobile-register">
+              <Link to="/register" className="register-btn-nav" onClick={() => setNavOpen(false)}>
+                Register Now
+              </Link>
+            </div>
           </nav>
+
           <div className="nav-right">
             <Link to="/register" className="register-btn-nav">Register Now</Link>
           </div>
