@@ -5,36 +5,12 @@ export default function ContactSection() {
   const contacts = useMemo(
     () => [
       {
-        name: 'Nihal Reddy',
-        role: 'Senior Manager',
-        focus: 'Events, Startups and Alumni Relations',
-        email: 'nihal.reddy@ecell-iitkgp.org',
-        phone: '6302693175',
-        image: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80',
-      },
-      {
-        name: 'Akriti Mishra',
-        role: 'Senior Manager',
-        focus: 'Events, Social Media Marketing',
-        email: 'akriti.mishra@ecell-iitkgp.org',
-        phone: '6388638591',
+        name: 'Satakshi Chauhan',
+        role: 'Public Relations, EAD-LSM Coordinator',
+        
+        email: 'satakshi@ecell-iitkgp.in',
+        phone: '+91 91133 76876',
         image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
-      },
-      {
-        name: 'Unnat Agarwal',
-        role: 'Senior Manager',
-        focus: 'Public Relations, EAD-LSM Coordinator',
-        email: 'unnat.agarwal@ecell-iitkgp.org',
-        phone: '9130270679',
-        image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80',
-      },
-      {
-        name: 'Hrushabh Bodhe',
-        role: 'Senior Manager',
-        focus: 'Public Relations, CMR',
-        email: 'hrushabh.bodhe@ecell-iitkgp.org',
-        phone: '8767630519',
-        image: 'https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=900&q=80',
       },
     ],
     [],
@@ -85,14 +61,13 @@ export default function ContactSection() {
               style={{ '--index': index }}
             >
               <div className="contact-card-image">
-                <img src={person.image} alt={person.name} loading="lazy" />
                 <div className="contact-card-overlay"></div>
               </div>
               
               <div className="contact-card-content">
                 <h3 className="contact-card-name">{person.name}</h3>
                 <span className="contact-card-role">{person.role}</span>
-                <p className="contact-card-focus">{person.focus}</p>
+                
                 
                 <div className="contact-card-links">
                   <a href={`mailto:${person.email}`} className="contact-link contact-link-email">

@@ -62,6 +62,7 @@ const LandingPage = () => {
 
         <main className="hero-section">
           <div ref={titleRef} className="hero-content-wrapper">
+           
             <h1 className="hero-title-main">GLOBAL ENTREPRENEURSHIP SUMMIT</h1>
             <div className="hero-year">2026</div>
             <div className="hero-divider"></div>

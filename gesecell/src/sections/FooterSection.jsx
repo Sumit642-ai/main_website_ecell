@@ -22,9 +22,35 @@ export default function FooterSection() {
 
   const socials = useMemo(
     () => [
-      { label: 'Facebook', href: 'https://facebook.com', abbr: 'f' },
-      { label: 'Instagram', href: 'https://instagram.com', abbr: 'ig' },
-      { label: 'LinkedIn', href: 'https://linkedin.com', abbr: 'in' },
+      {
+        label: 'Facebook',
+        href: 'https://www.facebook.com/ecell.iitkgp',
+        icon: (
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 8h2V4h-2c-2.2 0-4 1.8-4 4v2H8v4h3v6h4v-6h3l1-4h-4V8c0-.6.4-1 1-1z"/>
+          </svg>
+        ),
+      },
+      {
+        label: 'Instagram',
+        href: 'https://www.instagram.com/ecell_iitkgp/',
+        icon: (
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17" cy="7" r="1.1"/>
+          </svg>
+        ),
+      },
+      {
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/company/entrepreneurship-cell-iit-kharagpur/',
+        icon: (
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 9h3v10H5zM6.5 5.5A1.75 1.75 0 1 1 6.5 2a1.75 1.75 0 0 1 0 3.5zM10 9h3v1.6c.4-.8 1.3-1.6 2.8-1.6C18.8 9 20 10.3 20 12.7V19h-3v-5.3c0-1.3-.5-2-1.6-2-1 0-1.7.7-1.7 2.2V19h-3z"/>
+          </svg>
+        ),
+      },
     ],
     [],
   );
@@ -73,8 +99,15 @@ export default function FooterSection() {
         <div className="footer-social">
           <span className="footer-social-label">Connect with</span>
           {socials.map((social) => (
-            <a key={social.label} href={social.href} className="footer-social-icon" aria-label={social.label}>
-              {social.abbr}
+            <a
+              key={social.label}
+              href={social.href}
+              className="footer-social-icon"
+              aria-label={social.label}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {social.icon}
             </a>
           ))}
         </div>

@@ -2673,17 +2673,21 @@
   display: grid;
   place-items: center;
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 0.75rem;
   color: var(--palette-white);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  transition: background 180ms ease, color 180ms ease;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
 .footer-social-icon:hover {
   background: rgba(235, 80, 2, 0.3);
   color: var(--palette-white);
+  border-color: rgba(235, 80, 2, 0.6);
+}
+
+.footer-social-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 
 .sr-only {

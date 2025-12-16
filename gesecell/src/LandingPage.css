@@ -136,6 +136,18 @@
   z-index: 2;
 }
 
+.hero-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-logo img {
+  height: 88px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
+}
+
 .hero-title-main {
   font-family: 'Cinzel', serif;
   font-size: clamp(1.8rem, 5vw, 3.5rem);
