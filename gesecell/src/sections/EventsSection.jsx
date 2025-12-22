@@ -1,9 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import keynoteImg from '../assets/events/event1.png';
 import workshopImg from '../assets/events/event2.png';
 import firesideImg from '../assets/events/event3.png';
 
 export default function EventsSection() {
+  const sectionRef = useRef(null);
+
   const eventFormats = useMemo(
     () => [
       {
@@ -28,9 +31,29 @@ export default function EventsSection() {
     [],
   );
 
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    gsap.fromTo(
+      sectionRef.current.querySelectorAll('.event-feature-card'),
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: 'power3.out',
+      },
+    );
+  }, []);
+
   return (
-    <section id="events">
-      <div className="section-title">Events</div>
+    <section
+      id="events"
+      ref={sectionRef}
+      style={{ padding: '4rem 0', backgroundColor: '#000' }}
+    >
+      <div className="section-title" style={{ textAlign: 'left', marginBottom: '2.5rem' }}>Events</div>
 
       <div className="grid-3">
         {eventFormats.map((item) => (

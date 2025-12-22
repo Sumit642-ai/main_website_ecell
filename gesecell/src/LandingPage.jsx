@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import './LandingPage.css';
 import './Sections.css';
-import gesLogo from './assets/ges.png';
 
 import AboutSection from './sections/AboutSection';
 import ImpactStripSection from './sections/ImpactStripSection';
@@ -17,23 +16,7 @@ import FooterSection from './sections/FooterSection';
 
 const LandingPage = () => {
   const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
   const videoRef = useRef(null);
-  const [navOpen, setNavOpen] = useState(false);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      const handleTimeUpdate = () => {
-        if (video.currentTime >= 2) {
-          video.currentTime = 0;
-          video.play().catch(e => console.log("Video play error:", e));
-        }
-      };
-      video.addEventListener('timeupdate', handleTimeUpdate);
-      return () => video.removeEventListener('timeupdate', handleTimeUpdate);
-    }
-  }, []);
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
@@ -55,48 +38,20 @@ const LandingPage = () => {
     <div className="landing-page-container">
       {/* Fixed Video Background */}
       <div className="video-background">
-        <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        >
           <source src="/earth.mp4" type="video/mp4" />
         </video>
       </div>
       
       {/* 2D Content Overlay */}
       <div className="content-overlay">
-        <header className={`header-nav ${navOpen ? 'nav-open' : ''}`}>
-          <div className="nav-left">
-            <button
-              className={`mobile-nav-toggle ${navOpen ? 'is-open' : ''}`}
-              type="button"
-              aria-label="Toggle navigation"
-              aria-expanded={navOpen}
-              onClick={() => setNavOpen((open) => !open)}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-
-          <div className="nav-center">
-            <Link to="/" className="nav-logo" aria-label="GES E-Cell home">
-              <img src={gesLogo} alt="GES E-Cell logo" />
-            </Link>
-          </div>
-
-          <div className="nav-right">
-            <Link to="/register" className="register-btn-nav">Register Now</Link>
-          </div>
-
-          <nav className={`main-nav-menu ${navOpen ? 'active' : ''}`}>
-            <a href="#about" className="nav-link" onClick={() => setNavOpen(false)}>About</a>
-            <a href="#events" className="nav-link" onClick={() => setNavOpen(false)}>Events</a>
-            <a href="#competitions" className="nav-link" onClick={() => setNavOpen(false)}>Competitions</a>
-            <a href="#speakers" className="nav-link" onClick={() => setNavOpen(false)}>Speakers</a>
-            <Link to="/sponsors" className="nav-link" onClick={() => setNavOpen(false)}>Sponsors</Link>
-            <Link to="/contact" className="nav-link" onClick={() => setNavOpen(false)}>Contact</Link>
-          </nav>
-        </header>
-
         <main className="hero-section">
           <div ref={titleRef} className="hero-content-wrapper">
            
@@ -105,19 +60,20 @@ const LandingPage = () => {
             <div className="hero-divider"></div>
             <h2 className="hero-theme">ODYSSEY OF OPULENCE</h2>
             <p className="hero-date">30st JANUARY TO 1st FEBRUARY</p>
-            <Link to="/register" className="hero-register-btn">
-              Register Now
+            <Link to="/register" className="hero-register-btn primary-btn">
+              Register <span>→</span>
             </Link>
           </div>
         </main>
 
+        <div className="section-transition" />
         <div className="sections-wrap">
           <div className="sections-inner">
             <AboutSection />
             <ImpactStripSection />
             <StartupEventsSection />
-            <EventsSection />
             <CompetitionsSection />
+            <EventsSection />
             <PastSpeakersSection />
             <TestimonialsSection />
             <CTASection />

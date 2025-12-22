@@ -1,12 +1,37 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import aboutHero from '../assets/about/ges2.png';
 import aboutLeaders from '../assets/about/ges3.png';
 import aboutFuture from '../assets/about/ges4.jpg';
 
 export default function AboutSection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    gsap.fromTo(
+      sectionRef.current.querySelectorAll('.about-grid'),
+      { opacity: 0, y: 40, scale: 0.96 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power3.out',
+        scrollTrigger: null,
+      },
+    );
+  }, []);
+
   return (
-    <section id="about" style={{ padding: '4rem 0' }}>
-      <div className="section-title" style={{ textAlign: 'center', marginBottom: '4rem' }}>About GES</div>
+    <section
+      id="about"
+      ref={sectionRef}
+      style={{ padding: '4rem 0', backgroundColor: '#000' }}
+    >
+      <div className="section-title" style={{ textAlign: 'left', marginBottom: '3rem' }}>About GES</div>
       
       <div className="about-container">
         

@@ -1,79 +1,82 @@
-import React, { useMemo } from 'react';
-import { StickyScroll } from '../components/ui/StickyScrollReveal';
+import React, { useMemo, useState } from 'react';
 import rdSymposiumImg from '../assets/competition/RD.jpg';
 import investImg from '../assets/competition/invest-o-spective.jpg';
 import businessGameImg from '../assets/competition/businessgame.jpg';
 import empresarioImg from '../assets/competition/empresario.jpg';
 
 export default function CompetitionsSection() {
-  const content = useMemo(
+  const competitions = useMemo(
     () => [
       {
         title: 'R&D Symposium',
         description:
           'The R&D Symposium bridges entrepreneurship with research, empowering scholars to transform their work into real-life applications while advancing their research. Incentives • 5L+',
-        content: (
-          <div className="h-full w-full flex items-center justify-center text-white">
-            <img
-              src={rdSymposiumImg}
-              className="h-full w-full object-cover"
-              alt="R&D Symposium"
-            />
-          </div>
-        ),
+        image: rdSymposiumImg,
       },
       {
         title: 'Invest-O-Spective',
         description:
           'A unique competition to explore startup analysis for informed investment decisions while showcasing your analytical, communication, and presentation skills. Prize Money • 1L+',
-        content: (
-          <div className="h-full w-full  flex items-center justify-center text-white">
-            <img
-              src={investImg}
-              className="h-full w-full object-cover"
-              alt="Invest-O-Spective"
-            />
-          </div>
-        ),
+        image: investImg,
       },
       {
         title: 'Business Game',
         description:
           'Make high-stakes business calls under pressure. Compete in immersive simulations that test your strategy, presence of mind, and ability to lead teams through ambiguity. Prize Money • 2L+',
-        content: (
-          <div className="h-full w-full  flex items-center justify-center text-white">
-            <img
-              src={businessGameImg}
-              className="h-full w-full object-cover"
-              alt="Business Game"
-            />
-          </div>
-        ),
+        image: businessGameImg,
       },
       {
         title: 'Empresario',
         description:
           "Empresario, IIT Kharagpur's annual business model competition, offers mentorship and a platform to pitch ideas to venture capitalists, angel investors, and industry leaders. Prize Money • 1Cr+",
-        content: (
-          <div className="h-full w-full  flex items-center justify-center text-white">
-            <img
-              src={empresarioImg}
-              className="h-full w-full object-cover"
-              alt="Empresario"
-            />
-          </div>
-        ),
+        image: empresarioImg,
       },
     ],
     [],
   );
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <section id="competitions" className="competition-section py-20 bg-slate-950">
-      <div className="section-title text-center mb-12 text-4xl font-bold text-white">
-        Competitions
+    <section id="competitions" className="competition-section py-20">
+      <div className="section-title competition-heading">Competitions</div>
+
+      <div className="competition-accordion">
+        <div className="competition-accordion-list">
+          {competitions.map((item, index) => {
+            const isOpen = index === activeIndex;
+            return (
+              <button
+                key={item.title}
+                className={`competition-item ${isOpen ? 'is-open' : ''}`}
+                onMouseEnter={() => setActiveIndex(index)}
+                onFocus={() => setActiveIndex(index)}
+                aria-expanded={isOpen}
+              >
+                <div className="competition-item-top">
+                  <span className="competition-item-title">{item.title}</span>
+                  <span className="competition-item-badge">Explore</span>
+                </div>
+                <div className="competition-item-desc">{item.description}</div>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="competition-visual">
+          <div className="competition-visual-inner">
+            <img
+              src={competitions[activeIndex]?.image}
+              alt={competitions[activeIndex]?.title}
+              className="competition-visual-image"
+            />
+            <div className="competition-visual-overlay" />
+          </div>
+          <div className="competition-visual-caption">
+            {competitions[activeIndex]?.title}
+          </div>
+        </div>
       </div>
-      <StickyScroll content={content} />
     </section>
   );
 }

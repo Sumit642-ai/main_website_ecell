@@ -102,7 +102,7 @@ export default function RegistrationSection() {
                   <input type="tel" className="registration-input" placeholder="+91 98765 43210" />
                 </div>
 
-                <button type="button" className="registration-submit-btn" onClick={() => setStep(2)}>
+                <button type="button" className="registration-submit-btn primary-btn" onClick={() => setStep(2)}>
                   <span>Next: goals</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -151,7 +151,7 @@ export default function RegistrationSection() {
                   <button type="button" className="registration-secondary-btn" onClick={() => setStep(1)}>
                     Back
                   </button>
-                  <button type="submit" className="registration-submit-btn">
+                  <button type="submit" className="registration-submit-btn primary-btn">
                     <span>Register as {roles.find(r => r.id === activeTab)?.label}</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M5 12h14M12 5l7 7-7 7" />

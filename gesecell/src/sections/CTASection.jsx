@@ -13,7 +13,7 @@ export default function CTASection() {
           Join us to inspire innovation, foster entrepreneurship, and create a future without limits through marquee
           keynotes, hands-on workshops, intimate fireside chats, and global networking.
         </p>
-        <a className="cta-button" href="#register">
+        <a className="cta-button primary-btn" href="#register">
           Register <span className="cta-button-arrow">→</span>
         </a>
       </div>
