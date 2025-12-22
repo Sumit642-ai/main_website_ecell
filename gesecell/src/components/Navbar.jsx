@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import gesLogo from '../assets/ges.png';
 
-const Navbar = () => {
+function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
 
   const closeNav = () => setNavOpen(false);
-
   return (
     <header className={`header-nav ${navOpen ? 'nav-open' : ''}`}>
       <div className="nav-left">
@@ -57,7 +56,7 @@ const Navbar = () => {
       </nav>
     </header>
   );
-};
+}
 
 export default Navbar;
 

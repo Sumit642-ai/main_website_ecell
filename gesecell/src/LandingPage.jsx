@@ -55,13 +55,13 @@ const LandingPage = () => {
         <main className="hero-section">
           <div ref={titleRef} className="hero-content-wrapper">
            
-            <h1 className="hero-title-main">GLOBAL ENTREPRENEURSHIP SUMMIT</h1>
-            <div className="hero-year">2026</div>
+            <h1 className="hero-title-main">GLOBAL ENTREPRENEURSHIP SUMMIT 2026</h1>
+         
             <div className="hero-divider"></div>
             <h2 className="hero-theme">ODYSSEY OF OPULENCE</h2>
             <p className="hero-date">30st JANUARY TO 1st FEBRUARY</p>
             <Link to="/register" className="hero-register-btn primary-btn">
-              Register <span>→</span>
+              Register
             </Link>
           </div>
         </main>

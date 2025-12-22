@@ -6,9 +6,9 @@ export default function RegistrationSection() {
   const [step, setStep] = useState(1);
 
   const roles = [
-    { id: 'student', label: 'Student', icon: '🎓' },
-    { id: 'professor', label: 'Professor', icon: '📚' },
-    { id: 'startup', label: 'Startup', icon: '🚀' },
+    { id: 'student', label: 'Student', icon: '' },
+    { id: 'professor', label: 'Professor', icon: '' },
+    { id: 'startup', label: 'Startup', icon: '' },
   ];
 
   return (
