@@ -1,78 +1,79 @@
 import React, { useMemo } from 'react';
+import { StickyScroll } from '../components/ui/StickyScrollReveal';
 import rdSymposiumImg from '../assets/competition/RD.jpg';
 import investImg from '../assets/competition/invest-o-spective.jpg';
 import businessGameImg from '../assets/competition/businessgame.jpg';
 import empresarioImg from '../assets/competition/empresario.jpg';
 
 export default function CompetitionsSection() {
-  const competitions = useMemo(
+  const content = useMemo(
     () => [
       {
         title: 'R&D Symposium',
-        highlight: 'Incentives • 5L+',
-        desc:
-          'The R&D Symposium bridges entrepreneurship with research, empowering scholars to transform their work into real-life applications while advancing their research.',
-        image: rdSymposiumImg,
+        description:
+          'The R&D Symposium bridges entrepreneurship with research, empowering scholars to transform their work into real-life applications while advancing their research. Incentives • 5L+',
+        content: (
+          <div className="h-full w-full flex items-center justify-center text-white">
+            <img
+              src={rdSymposiumImg}
+              className="h-full w-full object-cover"
+              alt="R&D Symposium"
+            />
+          </div>
+        ),
       },
       {
         title: 'Invest-O-Spective',
-        highlight: 'Prize Money • 1L+',
-        desc:
-          'A unique competition to explore startup analysis for informed investment decisions while showcasing your analytical, communication, and presentation skills.',
-        image: investImg,
+        description:
+          'A unique competition to explore startup analysis for informed investment decisions while showcasing your analytical, communication, and presentation skills. Prize Money • 1L+',
+        content: (
+          <div className="h-full w-full  flex items-center justify-center text-white">
+            <img
+              src={investImg}
+              className="h-full w-full object-cover"
+              alt="Invest-O-Spective"
+            />
+          </div>
+        ),
       },
       {
         title: 'Business Game',
-        highlight: 'Prize Money • 2L+',
-        desc:
-          'Make high-stakes business calls under pressure. Compete in immersive simulations that test your strategy, presence of mind, and ability to lead teams through ambiguity.',
-        image: businessGameImg,
+        description:
+          'Make high-stakes business calls under pressure. Compete in immersive simulations that test your strategy, presence of mind, and ability to lead teams through ambiguity. Prize Money • 2L+',
+        content: (
+          <div className="h-full w-full  flex items-center justify-center text-white">
+            <img
+              src={businessGameImg}
+              className="h-full w-full object-cover"
+              alt="Business Game"
+            />
+          </div>
+        ),
       },
       {
         title: 'Empresario',
-        highlight: 'Prize Money • 1Cr+',
-        desc:
-          "Empresario, IIT Kharagpur's annual business model competition, offers mentorship and a platform to pitch ideas to venture capitalists, angel investors, and industry leaders.",
-        image: empresarioImg,
+        description:
+          "Empresario, IIT Kharagpur's annual business model competition, offers mentorship and a platform to pitch ideas to venture capitalists, angel investors, and industry leaders. Prize Money • 1Cr+",
+        content: (
+          <div className="h-full w-full  flex items-center justify-center text-white">
+            <img
+              src={empresarioImg}
+              className="h-full w-full object-cover"
+              alt="Empresario"
+            />
+          </div>
+        ),
       },
     ],
     [],
   );
 
   return (
-    <section id="competitions" className="competition-section">
-      <div className="section-title" style={{ textAlign: 'center', marginBottom: '2.8rem' }}>
+    <section id="competitions" className="competition-section py-20 bg-slate-950">
+      <div className="section-title text-center mb-12 text-4xl font-bold text-white">
         Competitions
       </div>
-
-      <div className="competition-track">
-        {competitions.map((competition, idx) => (
-          <article
-            key={competition.title}
-            className={`competition-pod ${idx % 2 === 0 ? 'align-left' : 'align-right'}`}
-            style={{ '--index': idx }}
-          >
-            <div className="competition-card">
-              <div className="competition-card-media">
-                <img
-                  src={competition.image}
-                  alt={competition.title}
-                  className="competition-card-image"
-                  loading="lazy"
-                />
-              </div>
-              <div className="competition-card-body">
-                <p className="competition-card-kicker">{competition.highlight}</p>
-                <h3 className="competition-card-title">{competition.title}</h3>
-                <p className="competition-card-desc">{competition.desc}</p>
-                <a href="#register" className="competition-card-link">
-                  Register <span className="competition-card-arrow">→</span>
-                </a>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
+      <StickyScroll content={content} />
     </section>
   );
 }
