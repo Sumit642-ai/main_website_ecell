@@ -2935,8 +2935,11 @@
 .impact-stats-new {
   flex: 1;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2.5rem;
+  position: relative;
 }
 
 .impact-item-new {
@@ -2944,22 +2947,58 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background: linear-gradient(120deg, rgba(30,30,30,0.98) 80%, rgba(255,180,71,0.08) 100%);
+  border-radius: 22px;
+  box-shadow: 0 4px 32px 0 rgba(255,180,71,0.12), 0 0 0 2px rgba(255,255,255,0.10);
+  padding: 2.8rem 2.2rem 2.2rem 2.2rem;
+  min-width: 200px;
+  flex: 1 1 0;
+  transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s, border-color 0.3s;
+  border: 2px solid #ffb347;
+  margin: 0;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+  .impact-item-new:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 48px 0 rgba(255,180,71,0.22), 0 0 0 2px #ffb347;
+    border-color: #fff;
+    background: linear-gradient(120deg, rgba(40,40,40,1) 80%, rgba(255,180,71,0.18) 100%);
+  }
+}
+  .impact-item-new:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 32px 0 rgba(255,180,71,0.12);
+    border-color: #ffb347;
+  }
 }
 
 .impact-value-new {
   font-family: 'Montserrat', sans-serif;
   font-size: 4rem;
-  font-weight: 400;
+  font-weight: 600;
   color: #fff;
   line-height: 1;
   margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 16px #ffb347, 0 2px 8px #000;
+  animation: impactValuePulse 2.5s infinite;
+  filter: drop-shadow(0 0 8px #ffb347);
+}
+}
+@keyframes impactValuePulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.25); }
+}
 }
 
 .impact-label-new {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 400;
+  font-size: 1.15rem;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 0 0 8px #ffb347, 0 2px 8px #000;
 }
 
 @media (max-width: 900px) {
@@ -2978,6 +3017,14 @@
     width: 100%;
     flex-direction: column;
     gap: 2.5rem;
+    align-items: center;
+  }
+  .impact-item-new {
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+    padding: 2rem 1rem 1.5rem 1rem;
+    flex: unset;
   }
 
   .impact-value-new {

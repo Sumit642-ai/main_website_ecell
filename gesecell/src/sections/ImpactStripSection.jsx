@@ -57,14 +57,13 @@ export default function ImpactStripSection() {
     { value: 60, label: 'Speakers', suffix: '+' },
     { value: 2700, label: 'Participants', suffix: '+' },
     { value: 300, label: 'Startups', suffix: '+' },
-    {value: 18.7, label: 'Million at Stake', suffix: 'M+'},
-    {value: 1.2, label: 'Empresario', suffix: 'cr+'},
+    { value: 18.7, label: 'Million at Stake', suffix: 'M+' },
+    { value: 1.2, label: 'Empresario', suffix: 'cr+' },
   ];
 
   return (
     <section id="impact" className="impact-section-new">
       <div className="impact-container-new">
-        <h2 className="impact-title-new">Our impact in<br />numbers</h2>
         <div className="impact-stats-new">
           {impactItems.map((it, idx) => (
             <div key={idx} className="impact-item-new">
