@@ -16,9 +16,7 @@ function Navbar() {
           aria-expanded={navOpen}
           onClick={() => setNavOpen((open) => !open)}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+        
         </button>
       </div>
 
@@ -30,7 +28,7 @@ function Navbar() {
 
       <div className="nav-right">
         <Link to="/register" className="register-btn-nav primary-btn" onClick={closeNav}>
-          REGISTER <span>→</span>
+          REGISTER 
         </Link>
       </div>
 

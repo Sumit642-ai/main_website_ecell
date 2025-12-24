@@ -48,10 +48,7 @@ const TestimonialCard = ({ testimonial }) => (
 const TestimonialsSection = () => {
   return (
     <section className="testimonials-section">
-      <div className="testimonials-header">
-        <h2 className="section-title">Words of Wisdom</h2>
-        <p className="section-subtitle">Inspiration from world-renowned entrepreneurs</p>
-      </div>
+       <span className="speakers-badge">testimonials</span>
       
       <div className="testimonials-container">
         {/* Row 1 - Moving Left */}

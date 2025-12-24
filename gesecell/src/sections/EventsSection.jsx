@@ -53,8 +53,8 @@ export default function EventsSection() {
       ref={sectionRef}
       style={{ padding: '4rem 0', backgroundColor: '#000' }}
     >
-      <div className="section-title" style={{ textAlign: 'left', marginBottom: '2.5rem' }}>Events</div>
-
+      
+      <span className="scroll-stack-badge">Events</span>
       <div className="grid-3">
         {eventFormats.map((item) => (
           <article key={item.title} className="event-feature-card">

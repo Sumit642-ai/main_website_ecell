@@ -1,3 +1,6 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
 .sections-wrap {
   position: relative;
   z-index: 20;
@@ -2848,7 +2851,7 @@
 }
 
 .about-content h3 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   margin: 0 0 1.5rem 0;
   color: #fff;

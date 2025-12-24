@@ -31,7 +31,7 @@ export default function AboutSection() {
       ref={sectionRef}
       style={{ padding: '4rem 0', backgroundColor: '#000' }}
     >
-      <div className="section-title" style={{ textAlign: 'left', marginBottom: '3rem' }}>About GES</div>
+      <span className="scroll-stack-badge">About GES</span>
       
       <div className="about-container">
         

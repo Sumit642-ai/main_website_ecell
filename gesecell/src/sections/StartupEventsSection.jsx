@@ -33,14 +33,8 @@ export default function StartupEventsSection() {
 
   return (
     <section id="startup-events" className="scroll-stack-section">
-      <div className="scroll-stack-header">
-        <span className="scroll-stack-badge">For Startups</span>
-        <h2 className="scroll-stack-title">Startup Events</h2>
-        <p className="scroll-stack-subtitle">
-          Exclusive opportunities designed to accelerate your startup journey
-        </p>
-      </div>
-
+      <span className="scroll-stack-badge">For Startups</span>
+      
       <div className="scroll-stack-container">
         {events.map((event, idx) => (
           <div 

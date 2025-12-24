@@ -76,7 +76,7 @@ export default function FooterSection() {
               />
             </div>
             <button type="submit" className="footer-submit primary-btn">
-              Register <span className="footer-submit-arrow">→</span>
+              Register 
             </button>
           </form>
         </div>

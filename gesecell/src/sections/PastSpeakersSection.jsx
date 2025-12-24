@@ -73,11 +73,9 @@ export default function PastSpeakersSection() {
 
   return (
     <section id="speakers" className="speakers-scene">
-      <div className="speakers-header">
-        <span className="speakers-badge">Legacy</span>
-        <h2 className="speakers-title">Past Speakers</h2>
-        <p className="speakers-subtitle">Industry titans who have graced our summit</p>
-      </div>
+
+        <span className="speakers-badge">Past Speakers</span>
+    
       
       <div className="speakers-marquee-container">
         <div className="speakers-marquee-card">

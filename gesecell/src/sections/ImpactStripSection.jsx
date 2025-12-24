@@ -57,6 +57,8 @@ export default function ImpactStripSection() {
     { value: 60, label: 'Speakers', suffix: '+' },
     { value: 2700, label: 'Participants', suffix: '+' },
     { value: 300, label: 'Startups', suffix: '+' },
+    {value: 18.7, label: 'Million at Stake', suffix: 'M+'},
+    {value: 1.2, label: 'Empresario', suffix: 'cr+'},
   ];
 
   return (

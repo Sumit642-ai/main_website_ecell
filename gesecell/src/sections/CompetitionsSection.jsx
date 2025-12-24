@@ -39,7 +39,7 @@ export default function CompetitionsSection() {
 
   return (
     <section id="competitions" className="competition-section py-20">
-      <div className="section-title competition-heading">Competitions</div>
+      <span className="scroll-stack-badge">Competitions</span>
 
       <div className="competition-accordion">
         <div className="competition-accordion-list">
