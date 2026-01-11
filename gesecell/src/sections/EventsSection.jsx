@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import keynoteImg from '../assets/events/event1.png';
 import workshopImg from '../assets/events/event2.png';
 import firesideImg from '../assets/events/event3.png';
+import SectionHeader from '../components/SectionHeader';
 
 export default function EventsSection() {
   const sectionRef = useRef(null);
@@ -54,7 +55,7 @@ export default function EventsSection() {
       style={{ padding: '4rem 0', backgroundColor: '#000' }}
     >
       
-      <span className="scroll-stack-badge">Events</span>
+      <SectionHeader title="Events" />
       <div className="grid-3">
         {eventFormats.map((item) => (
           <article key={item.title} className="event-feature-card">

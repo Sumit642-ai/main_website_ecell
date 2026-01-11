@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import internCarnivalImg from '../assets/initiatives/ini1.jpeg';
 import investorConnectImg from '../assets/initiatives/ini2.avif';
 import productExpoImg from '../assets/initiatives/ini3.jpg';
+import SectionHeader from '../components/SectionHeader';
 
 export default function StartupEventsSection() {
   const events = useMemo(
@@ -33,7 +34,7 @@ export default function StartupEventsSection() {
 
   return (
     <section id="startup-events" className="scroll-stack-section">
-      <span className="scroll-stack-badge">For Startups</span>
+      <SectionHeader title="For Startups" />
       
       <div className="scroll-stack-container">
         {events.map((event, idx) => (

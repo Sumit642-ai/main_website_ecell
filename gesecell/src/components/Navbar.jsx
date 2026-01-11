@@ -2,34 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import gesLogo from '../assets/ges.png';
-
-// Hamburger styles scoped to Navbar only
-const hamburgerStyles = {
-  button: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '44px',
-    height: '44px',
-    background: '#111',
-    border: 'none',
-    outline: 'none',
-    cursor: 'pointer',
-    padding: '0',
-    borderRadius: '12px',
-    boxShadow: '2px 0 12px rgba(0,0,0,0.18)',
-    zIndex: 200,
-  },
-  bar: {
-    width: '28px',
-    height: '4px',
-    background: '#fff',
-    margin: '5px 0',
-    borderRadius: '2px',
-    transition: 'all 0.3s cubic-bezier(.4,2,.6,1)',
-  },
-};
+import './CrazyHamburger.css';
 
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
@@ -40,29 +13,18 @@ function Navbar() {
       <div className="nav-left" style={{ display: 'flex', alignItems: 'center' }}>
         <button
           type="button"
+          className={`crazy-hamburger ${navOpen ? 'active' : ''}`}
           aria-label="Open navigation menu"
           aria-expanded={navOpen}
           onClick={() => setNavOpen((open) => !open)}
-          style={hamburgerStyles.button}
         >
-          <span
-            style={{
-              ...hamburgerStyles.bar,
-              transform: navOpen ? 'translateY(10px) rotate(45deg)' : 'none',
-            }}
-          ></span>
-          <span
-            style={{
-              ...hamburgerStyles.bar,
-              opacity: navOpen ? 0 : 1,
-            }}
-          ></span>
-          <span
-            style={{
-              ...hamburgerStyles.bar,
-              transform: navOpen ? 'translateY(-10px) rotate(-45deg)' : 'none',
-            }}
-          ></span>
+          <div className="hamburger-box">
+            <span className="hamburger-line line-1"></span>
+            <span className="hamburger-line line-2"></span>
+            <span className="hamburger-line line-3"></span>
+          </div>
+          <div className="glow-effect"></div>
+          <div className="ripple-effect"></div>
         </button>
       </div>
 

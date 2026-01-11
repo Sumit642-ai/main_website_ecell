@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-// ...existing code...
+import SectionHeader from '../components/SectionHeader';
 // Import all 11 images
 import about1 from '../assets/about/about1.jpg';
 import about2 from '../assets/about/about2.jpg';
@@ -73,7 +73,7 @@ export default function AboutSection() {
       ref={sectionRef}
       style={{ padding: '4rem 0', backgroundColor: '#000' }}
     >
-      <span className="scroll-stack-badge">About GES</span>
+      <SectionHeader title="About GES" />
       <div className="about-container">
         {/* Slot 1: 2 images slideshow with fade animation */}
         <div className="about-grid">

@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import SectionHeader from '../components/SectionHeader';
 
 const getInitials = (name) =>
   name
@@ -74,7 +75,7 @@ export default function PastSpeakersSection() {
   return (
     <section id="speakers" className="speakers-scene">
 
-        <span className="speakers-badge">Past Speakers</span>
+        <SectionHeader title="Past Speakers" />
     
       
       <div className="speakers-marquee-container">

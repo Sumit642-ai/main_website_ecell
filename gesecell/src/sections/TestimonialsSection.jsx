@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import "./TestimonialsSection.css";
+import SectionHeader from '../components/SectionHeader';
 
 const testimonials = [
   {
@@ -48,7 +49,7 @@ const TestimonialCard = ({ testimonial }) => (
 const TestimonialsSection = () => {
   return (
     <section className="testimonials-section">
-       <span className="speakers-badge">testimonials</span>
+       <SectionHeader title="Testimonials" />
       
       <div className="testimonials-container">
         {/* Row 1 - Moving Left */}

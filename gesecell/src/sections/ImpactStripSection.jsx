@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 
-const CountUp = ({ end, duration = 2000 }) => {
+const CountUp = ({ end, duration = 2000, decimals = 0 }) => {
   const [count, setCount] = useState(0);
   const countRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -37,10 +37,13 @@ const CountUp = ({ end, duration = 2000 }) => {
       // Ease out quart
       const ease = 1 - Math.pow(1 - percentage, 4);
       
-      setCount(Math.floor(end * ease));
+      const newCount = end * ease;
+      setCount(newCount);
 
       if (percentage < 1) {
         animationFrame = requestAnimationFrame(animate);
+      } else {
+        setCount(end);
       }
     };
 
@@ -49,16 +52,16 @@ const CountUp = ({ end, duration = 2000 }) => {
     return () => cancelAnimationFrame(animationFrame);
   }, [end, duration, isVisible]);
 
-  return <span ref={countRef}>{count}</span>;
+  return <span ref={countRef}>{count.toFixed(decimals)}</span>;
 };
 
 export default function ImpactStripSection() {
   const impactItems = [
-    { value: 60, label: 'Speakers', suffix: '+' },
-    { value: 2700, label: 'Participants', suffix: '+' },
-    { value: 300, label: 'Startups', suffix: '+' },
-    { value: 18.7, label: 'Million at Stake', suffix: 'M+' },
-    { value: 1.2, label: 'Empresario', suffix: 'cr+' },
+    { value: 60, label: 'Speakers', suffix: '+', decimals: 0 },
+    { value: 2700, label: 'Participants', suffix: '+', decimals: 0 },
+    { value: 300, label: 'Startups', suffix: '+', decimals: 0 },
+    { value: 18, label: 'Million at Stake', suffix: 'M+', decimals: 0 },
+    { value: 1.2, label: 'Empresario', suffix: 'CR+', decimals: 1 },
   ];
 
   return (
@@ -68,7 +71,7 @@ export default function ImpactStripSection() {
           {impactItems.map((it, idx) => (
             <div key={idx} className="impact-item-new">
               <div className="impact-value-new">
-                <CountUp end={it.value} />{it.suffix}
+                <CountUp end={it.value} decimals={it.decimals} />{it.suffix}
               </div>
               <div className="impact-label-new">{it.label}</div>
             </div>

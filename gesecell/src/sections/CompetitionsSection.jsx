@@ -3,6 +3,7 @@ import rdSymposiumImg from '../assets/competition/RD.jpg';
 import investImg from '../assets/competition/invest-o-spective.jpg';
 import businessGameImg from '../assets/competition/businessgame.jpg';
 import empresarioImg from '../assets/competition/empresario.jpg';
+import SectionHeader from '../components/SectionHeader';
 
 export default function CompetitionsSection() {
   const competitions = useMemo(
@@ -39,7 +40,7 @@ export default function CompetitionsSection() {
 
   return (
     <section id="competitions" className="competition-section py-20">
-      <span className="scroll-stack-badge">Competitions</span>
+      <SectionHeader title="Competitions" />
 
       <div className="competition-accordion">
         <div className="competition-accordion-list">
@@ -55,7 +56,7 @@ export default function CompetitionsSection() {
               >
                 <div className="competition-item-top">
                   <span className="competition-item-title">{item.title}</span>
-                  <span className="competition-item-badge">Explore</span>
+                  
                 </div>
                 <div className="competition-item-desc">{item.description}</div>
               </button>
