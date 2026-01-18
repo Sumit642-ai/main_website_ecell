@@ -35,9 +35,9 @@ function Navbar() {
       </div>
 
       <div className="nav-right">
-        <Link to="/register" className="register-btn-nav primary-btn" onClick={closeNav}>
+        <a href="https://clients.forms.meraevents.ai/customForms/ges-2026" className="register-btn-nav primary-btn" onClick={closeNav} target="_blank" rel="noopener noreferrer">
           REGISTER 
-        </Link>
+        </a>
       </div>
 
       <nav className={`main-nav-menu ${navOpen ? 'active' : ''}`}>

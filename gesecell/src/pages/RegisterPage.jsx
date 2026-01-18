@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import RegistrationSection from '../sections/RegistrationSection';
 import '../LandingPage.css';
 import '../Sections.css';
 
@@ -13,7 +12,18 @@ export default function RegisterPage() {
         </svg>
         <span>Back to Summit</span>
       </Link>
-      <RegistrationSection />
+      <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <iframe 
+          src="https://clients.forms.meraevents.ai/customForms/ges-2026" 
+          style={{
+            width: '100%',
+            height: '100%',
+            border: 'none',
+            borderRadius: '12px'
+          }}
+          title="GES 2026 Registration"
+        />
+      </div>
     </div>
   );
 }

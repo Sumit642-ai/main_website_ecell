@@ -60,9 +60,9 @@ const LandingPage = () => {
             <div className="hero-divider"></div>
             <h2 className="hero-theme">ODYSSEY OF OPULENCE</h2>
             <p className="hero-date">30st JANUARY TO 1st FEBRUARY</p>
-            <Link to="/register" className="hero-register-btn primary-btn">
+            <a href="https://clients.forms.meraevents.ai/customForms/ges-2026" className="hero-register-btn primary-btn" target="_blank" rel="noopener noreferrer">
               Register
-            </Link>
+            </a>
           </div>
         </main>
 

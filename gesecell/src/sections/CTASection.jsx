@@ -13,7 +13,7 @@ export default function CTASection() {
           Join us to inspire innovation, foster entrepreneurship, and create a future without limits through marquee
           keynotes, hands-on workshops, intimate fireside chats, and global networking.
         </p>
-        <a className="cta-button primary-btn" href="#register">
+        <a className="cta-button primary-btn" href="https://clients.forms.meraevents.ai/customForms/ges-2026" target="_blank" rel="noopener noreferrer">
           Register
         </a>
       </div>
