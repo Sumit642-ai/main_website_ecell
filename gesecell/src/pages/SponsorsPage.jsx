@@ -152,7 +152,7 @@ export default function SponsorsPage() {
       {/* Hero Section */}
       <section className="sponsors-hero">
         <span className="sponsors-badge">Partners • GES 2026</span>
-        <h1 className="sponsors-title">Our Sponsors</h1>
+        <h1 className="sponsors-title">Previous Sponsors</h1>
         <p className="sponsors-subtitle">
           Explore the brands, institutions, and innovation partners powering the Global Entrepreneurship Summit
         </p>
