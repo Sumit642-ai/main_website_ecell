@@ -4,6 +4,7 @@ import FooterSection from '../sections/FooterSection';
 import '../LandingPage.css';
 import '../Sections.css';
 
+
 export default function SponsorsPage() {
   const sponsorTiers = [
     {
@@ -108,20 +109,20 @@ export default function SponsorsPage() {
 
   const contacts = [
     {
-      name: 'Nihal Reddy',
+      name: 'Divyansh Singh Solanki',
       role: 'Senior Manager',
       focus: 'Sponsorship & Partnerships',
-      email: 'nihal.reddy@ecell-iitkgp.org',
-      phone: '6302693175',
-      image: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80',
+      email: 'singh.divyansh@ecell-iitkgp.in',
+      phone: '7869709748',
+      image: './public/divyansh.jpg',
     },
     {
-      name: 'Hrushabh Bodhe',
+      name: 'Samarth Sharma',
       role: 'Senior Manager',
       focus: 'Corporate Relations',
-      email: 'hrushabh.bodhe@ecell-iitkgp.org',
-      phone: '8767630519',
-      image: 'https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=900&q=80',
+      email: 'sharma.samarth@ecell-iitkgp.org',
+      phone: '8890054499',
+      image: './public/samartth.png',
     }
   ];
 
