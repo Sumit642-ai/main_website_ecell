@@ -114,7 +114,7 @@ export default function SponsorsPage() {
       focus: 'Sponsorship & Partnerships',
       email: 'singh.divyansh@ecell-iitkgp.in',
       phone: '7869709748',
-      image: './public/divyansh.jpg',
+      image: './divyansh.jpg',
     },
     {
       name: 'Samarth Sharma',
@@ -122,7 +122,7 @@ export default function SponsorsPage() {
       focus: 'Corporate Relations',
       email: 'sharma.samarth@ecell-iitkgp.org',
       phone: '8890054499',
-      image: './public/samartth.png',
+      image: './samartth.png',
     },
     {
       name: 'Khush Duggar',
@@ -130,7 +130,7 @@ export default function SponsorsPage() {
       focus: 'Sponsorship & Partnerships',
       email: 'duggar.khush@ecell-iitkgp.org',
       phone: '9922168000',
-      image: './public/khush.jpg',
+      image: './khush.jpg',
     }
   ];
 
