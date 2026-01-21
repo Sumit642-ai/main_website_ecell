@@ -10,7 +10,19 @@ function Navbar() {
   const closeNav = () => setNavOpen(false);
   return (
     <header className={`header-nav ${navOpen ? 'nav-open' : ''}`}>
-      <div className="nav-left" style={{ display: 'flex', alignItems: 'center' }}>
+      <div className="nav-left">
+        <Link to="/" className="nav-logo" aria-label="GES E-Cell home" onClick={closeNav}>
+          <img src={gesLogo} alt="GES E-Cell logo" />
+        </Link>
+      </div>
+
+      <div className="nav-center">
+        <a href="https://clients.forms.meraevents.ai/customForms/ges-2026" className="register-btn-nav primary-btn" onClick={closeNav} target="_blank" rel="noopener noreferrer">
+          REGISTER 
+        </a>
+      </div>
+
+      <div className="nav-right">
         <button
           type="button"
           className={`crazy-hamburger ${navOpen ? 'active' : ''}`}
@@ -26,18 +38,6 @@ function Navbar() {
           <div className="glow-effect"></div>
           <div className="ripple-effect"></div>
         </button>
-      </div>
-
-      <div className="nav-center">
-        <Link to="/" className="nav-logo" aria-label="GES E-Cell home" onClick={closeNav}>
-          <img src={gesLogo} alt="GES E-Cell logo" />
-        </Link>
-      </div>
-
-      <div className="nav-right">
-        <a href="https://clients.forms.meraevents.ai/customForms/ges-2026" className="register-btn-nav primary-btn" onClick={closeNav} target="_blank" rel="noopener noreferrer">
-          REGISTER 
-        </a>
       </div>
 
       <nav className={`main-nav-menu ${navOpen ? 'active' : ''}`}>

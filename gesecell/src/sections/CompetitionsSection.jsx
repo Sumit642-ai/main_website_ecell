@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect, useRef } from 'react';
 import rdSymposiumImg from '../assets/competition/RD.jpg';
 import investImg from '../assets/competition/invest-o-spective.jpg';
 import businessGameImg from '../assets/competition/businessgame.jpg';
@@ -37,6 +37,33 @@ export default function CompetitionsSection() {
   );
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observers = cardRefs.current.map((card, index) => {
+      if (!card) return null;
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add('fade-in-visible');
+              }, index * 150);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      
+      observer.observe(card);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer?.disconnect());
+    };
+  }, []);
 
   return (
     <section id="competitions" className="competition-section py-20">
@@ -77,6 +104,30 @@ export default function CompetitionsSection() {
             {competitions[activeIndex]?.title}
           </div>
         </div>
+      </div>
+
+      {/* Mobile Card Layout */}
+      <div className="competition-cards-mobile">
+        {competitions.map((item, index) => (
+          <div
+            key={item.title}
+            ref={(el) => (cardRefs.current[index] = el)}
+            className="competition-card-mobile fade-in-card"
+          >
+            <div className="competition-card-image-wrapper">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="competition-card-image"
+              />
+              <div className="competition-card-overlay" />
+            </div>
+            <div className="competition-card-content">
+              <h3 className="competition-card-title">{item.title}</h3>
+              <p className="competition-card-description">{item.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

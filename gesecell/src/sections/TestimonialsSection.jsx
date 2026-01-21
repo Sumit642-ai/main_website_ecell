@@ -1,38 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import "./TestimonialsSection.css";
 import SectionHeader from '../components/SectionHeader';
 
 const testimonials = [
   {
-    quote: "Entrepreneurship is about turning what excites you in life into capital, so that you can do more of it and move forward with it.",
-    name: "Richard Branson",
-    title: "Founder of Virgin Group",
+    quote: "Amazing event truly inspiring for all budding young entrepreneurs who were there for the event.",
+    name: "Mr. Kishore Jayaraman",
+    title: "President, Rolls-Royce, India & South Asia",
   },
   {
-    quote: "The biggest risk is not taking any risk. In a world that is changing really quickly, the only strategy that is guaranteed to fail is not taking risks.",
-    name: "Mark Zuckerberg",
-    title: "Co-founder of Facebook",
+    quote: "E-Cell is doing a tremendous job in promoting entrepreneurship. India needs more ecosystems like this to become a superpower.",
+    name: "Dr. D Subbarao",
+    title: "Former RBI Governor",
   },
   {
-    quote: "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work.",
-    name: "Steve Jobs",
-    title: "Co-founder of Apple",
+    quote: "It was great to present to this audience at IIT Kharagpur. A fantastic amount of energy and enthusiasm from this group that I know will change the world. Great being here.",
+    name: "Mr. Aditya Mony",
+    title: "CTO, JP Morgan Chase & Co",
   },
   {
-    quote: "I knew that if I failed I wouldn't regret that, but I knew the one thing I might regret is not trying.",
-    name: "Jeff Bezos",
-    title: "Founder of Amazon",
+    quote: "The entrepreneurship cell of IIT Kharagpur does an awesome work increasing the awareness interest desire of the budding ventures. I wish them the very best. Thank you.",
+    name: "Mr. Ram Gopal",
+    title: "CEO, Barclays Bank",
   },
   {
-    quote: "Don't worry about failure; you only have to be right once.",
-    name: "Drew Houston",
-    title: "Co-founder of Dropbox",
-  },
-  {
-    quote: "It’s not about ideas. It’s about making ideas happen.",
-    name: "Scott Belsky",
-    title: "Co-founder of Behance",
+    quote: "Summit like GES brings Corporates startups VCs together. It is not just an event a field to nurture ideas associated with the commercialization of ideas.",
+    name: "Mr. Aloknath De",
+    title: "CTO, Samsung R&D",
   }
 ];
 
@@ -46,11 +41,108 @@ const TestimonialCard = ({ testimonial }) => (
   </div>
 );
 
+const MobileTestimonialCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsPaused(true);
+  };
+
+  const handleTouchEnd = (e) => {
+    setTouchEnd(e.changedTouches[0].clientX);
+    handleSwipe();
+    setIsPaused(false);
+  };
+
+  const handleSwipe = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    } else if (isRightSwipe) {
+      setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    }
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 3000);
+  };
+
+  return (
+    <div
+      className="mobile-carousel"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <motion.div
+        className="carousel-track"
+        animate={{ x: `-${currentIndex * 100}%` }}
+        transition={{ type: "tween", ease: "easeInOut", duration: 0.8 }}
+      >
+        {testimonials.map((testimonial, index) => (
+          <motion.div
+            key={index}
+            className="carousel-slide"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="carousel-quote-section">
+              <div className="quote-mark">"</div>
+              <p className="carousel-quote">{testimonial.quote}</p>
+            </div>
+            <div className="carousel-author-section">
+              <div className="author-avatar">{testimonial.name.charAt(0)}</div>
+              <div className="author-info">
+                <div className="carousel-name">{testimonial.name}</div>
+                <div className="carousel-title">{testimonial.title}</div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Navigation Dots */}
+      <div className="carousel-dots">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            className={`dot ${index === currentIndex ? "active" : ""}`}
+            onClick={() => goToSlide(index)}
+            aria-label={`Go to testimonial ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const TestimonialsSection = () => {
   return (
     <section className="testimonials-section">
        <SectionHeader title="Testimonials" />
       
+      {/* Desktop Marquee */}
       <div className="testimonials-container">
         {/* Row 1 - Moving Left */}
         <div className="marquee-row">
@@ -86,6 +178,9 @@ const TestimonialsSection = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Mobile Carousel */}
+      <MobileTestimonialCarousel />
     </section>
   );
 };

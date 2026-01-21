@@ -117,3 +117,243 @@
   font-size: 0.9rem;
   color: var(--palette-gray);
 }
+
+/* Mobile Carousel Design */
+.mobile-carousel {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, rgba(235, 80, 2, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1.5px solid rgba(235, 80, 2, 0.5);
+  border-radius: 16px;
+  min-height: 400px;
+  box-sizing: border-box;
+  will-change: opacity;
+  transform: translate3d(0, 0, 0);
+}
+
+.carousel-quote-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.quote-mark {
+  font-size: 3rem;
+  color: var(--palette-orange);
+  font-weight: 900;
+  line-height: 0.8;
+  opacity: 0.6;
+}
+
+.carousel-quote {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.carousel-author-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(235, 80, 2, 0.4);
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--palette-orange), #ff7a1a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.author-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.carousel-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--palette-orange);
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carousel-title {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: var(--palette-orange);
+  width: 24px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(235, 80, 2, 0.6);
+}
+
+.carousel-arrow {
+  display: none;
+}
+
+.carousel-arrow.prev {
+  display: none;
+}
+
+.carousel-arrow.next {
+  display: none;
+}
+
+.carousel-arrow:hover {
+  display: none;
+}
+
+/* Mobile Testimonials Redesign */
+@media (max-width: 768px) {
+  /* Hide desktop marquee */
+  .testimonials-container {
+    display: none;
+  }
+  
+  /* Show mobile carousel */
+  .mobile-carousel {
+    display: block;
+    padding: 0;
+  }
+  
+  .carousel-slide {
+    padding: 1.5rem 1.25rem;
+    min-height: 380px;
+  }
+  
+  .carousel-quote {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  .quote-mark {
+    font-size: 2.5rem;
+  }
+  
+  .carousel-dots {
+    margin-top: 1.25rem;
+  }
+  
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-carousel {
+    padding: 0;
+  }
+  
+  .carousel-slide {
+    padding: 1.25rem 1rem;
+    min-height: 350px;
+    border-radius: 12px;
+  }
+  
+  .carousel-quote {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .quote-mark {
+    font-size: 2.2rem;
+  }
+  
+  .author-avatar {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+  
+  .carousel-name {
+    font-size: 0.95rem;
+  }
+  
+  .carousel-title {
+    font-size: 0.75rem;
+  }
+  
+  .carousel-dots {
+    gap: 0.35rem;
+    margin-top: 1rem;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .dot.active {
+    width: 20px;
+  }
+  
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+}

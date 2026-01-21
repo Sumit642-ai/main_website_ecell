@@ -111,7 +111,7 @@ export default function SponsorsPage() {
     {
       name: 'Divyansh Singh Solanki',
       role: 'Senior Manager',
-      focus: 'Sponsorship & Partnerships',
+      focus: 'Corporate Relations',
       email: 'singh.divyansh@ecell-iitkgp.in',
       phone: '7869709748',
       image: './divyansh.jpg',
@@ -119,7 +119,7 @@ export default function SponsorsPage() {
     {
       name: 'Samarth Sharma',
       role: 'Senior Manager',
-      focus: 'Corporate Relations',
+      focus: 'Corporate Relations| Public Relations',
       email: 'sharma.samarth@ecell-iitkgp.org',
       phone: '8890054499',
       image: './samartth.png',
@@ -127,7 +127,7 @@ export default function SponsorsPage() {
     {
       name: 'Khush Duggar',
       role: 'Senior Manager',
-      focus: 'Sponsorship & Partnerships',
+      focus: 'Corporate Relations| Social Media Marketing',
       email: 'duggar.khush@ecell-iitkgp.org',
       phone: '9922168000',
       image: './khush.jpg',

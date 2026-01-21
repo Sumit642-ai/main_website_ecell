@@ -52,7 +52,7 @@
   overflow-y: visible;
   background-color: #000; /* Solid black for rest of site */
   color: var(--palette-white);
-  font-family: 'Inter', sans-serif; /* Clean sans-serif */
+  font-family: 'Montserrat', sans-serif; /* Clean sans-serif */
 }
 
 .video-background {
@@ -133,18 +133,23 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.nav-left, .nav-right {
-  flex: 1;
+.nav-left {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .nav-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
   justify-content: flex-end;
 }
 
 .nav-center {
-  display: flex;
+  flex: 1;
+  display: none;
   gap: 2rem;
   justify-content: center;
 }
@@ -390,9 +395,27 @@
   }
 }
 
+@media (max-width: 768px) {
+  .header-nav {
+    padding: 0.55rem 0.8rem;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .register-btn-nav {
+    display: none;
+  }
+
+  .nav-logo img {
+    height: 44px;
+  }
+}
+
 @media (max-width: 640px) {
   .header-nav {
-    padding: 0.55rem 0.9rem;
+    padding: 0.55rem 0.6rem;
   }
 
   .nav-logo img {
@@ -400,6 +423,7 @@
   }
 
   .register-btn-nav {
+    display: none;
     padding: 0.5rem 0.8rem;
     font-size: 0.8rem;
   }

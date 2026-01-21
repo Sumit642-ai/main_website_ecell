@@ -191,12 +191,17 @@ export default function RegistrationSection() {
                   <button type="button" className="registration-secondary-btn" onClick={() => setStep(1)}>
                     Back
                   </button>
-                  <button type="submit" className="registration-submit-btn primary-btn">
+                  <a
+                    className="registration-submit-btn primary-btn"
+                    href="https://clients.forms.meraevents.ai/customForms/ges-2026"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span>Register as {roles.find(r => r.id === activeTab)?.label}</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
-                  </button>
+                  </a>
                 </div>
 
                 <p className="registration-footnote">By registering you agree to our code of conduct and consent to receive event updates.</p>

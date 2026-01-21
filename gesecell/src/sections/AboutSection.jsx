@@ -94,7 +94,7 @@ export default function AboutSection() {
             <div className="panel-kicker" style={{ color: 'var(--palette-orange)', marginBottom: '0.5rem' }}>Fueling Ideas</div>
             <h3>About GES?</h3>
             <p>
-              The Global Entrepreneurship Summit (GES) is IIT Kharagpur's annual international corporate summit, organized by the Entrepreneurship Cell. Since its inception in 2007, GES has become India's largest student-run entrepreneurial summit, attracting visionaries from across industries.
+              The <a href="https://www.gesecell.com" target="_blank" rel="noopener noreferrer" className="about-link">Global Entrepreneurship Summit (GES)</a> is IIT Kharagpur's annual international corporate summit, organized by the <a href="https://www.iitkharagpur.ac.in" target="_blank" rel="noopener noreferrer" className="about-link">Entrepreneurship Cell</a>. Since its inception in 2007, GES has become India's largest student-run entrepreneurial summit, attracting visionaries from across industries.
             </p>
           </div>
         </div>
@@ -118,7 +118,7 @@ export default function AboutSection() {
             <div className="panel-kicker" style={{ color: 'var(--palette-orange)', marginBottom: '0.5rem' }}>Connecting Leaders</div>
             <h3>A Hub for Visionaries</h3>
             <p>
-              GES brings together academicians, innovative entrepreneurs, industry leaders, venture capitalists, and ambitious students. It’s a space for sharing ideas, showcasing entrepreneurial journeys, and building connections that inspire growth.
+              GES brings together academicians, innovative entrepreneurs, industry leaders, <a href="https://www.nassauom.org" target="_blank" rel="noopener noreferrer" className="about-link">venture capitalists</a>, and ambitious students. It's a space for sharing ideas, showcasing entrepreneurial journeys, and building connections that inspire growth.
             </p>
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function AboutSection() {
             <div className="panel-kicker" style={{ color: 'var(--palette-orange)', marginBottom: '0.5rem' }}>Shaping Tomorrow</div>
             <h3>Empowering the Future</h3>
             <p>
-              With a commitment to driving innovation and fostering entrepreneurial excellence, GES empowers individuals to dream big, collaborate, and shape the future of global business and innovation.
+              With a commitment to driving <a href="#about" className="about-link">innovation</a> and fostering entrepreneurial excellence, GES empowers individuals to dream big, collaborate, and shape the future of global business and innovation.
             </p>
           </div>
         </div>
