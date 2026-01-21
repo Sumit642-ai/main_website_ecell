@@ -123,6 +123,14 @@ export default function SponsorsPage() {
       email: 'sharma.samarth@ecell-iitkgp.org',
       phone: '8890054499',
       image: './public/samartth.png',
+    },
+    {
+      name: 'Khush Duggar',
+      role: 'Senior Manager',
+      focus: 'Sponsorship & Partnerships',
+      email: 'duggar.khush@ecell-iitkgp.org',
+      phone: '9922168000',
+      image: './public/khush.jpg',
     }
   ];
 
