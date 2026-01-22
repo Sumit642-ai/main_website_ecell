@@ -89,7 +89,7 @@ export default function AboutSection() {
           minWidth: '350px',
           aspectRatio: '16/9',
           borderRadius: '12px',
-          border: '1px solid rgba(255,255,255,0.1)',
+          border: '2px solid rgba(235, 80, 2, 0.6)',
           overflow: 'hidden',
           position: 'relative',
           background: '#000',
@@ -101,10 +101,8 @@ export default function AboutSection() {
             style={{ 
               width: '100%',
               height: '100%',
-              objectFit: 'contain',
-              transform: 'rotate(-90deg)',
-              maxWidth: '150%',
-              maxHeight: '150%'
+              objectFit: 'cover',
+              transform: 'rotate(-90deg)'
             }}
             controls
             controlsList="nodownload"
@@ -119,22 +117,21 @@ export default function AboutSection() {
           minWidth: '350px',
           aspectRatio: '16/9',
           borderRadius: '12px',
-          border: '1px solid rgba(255,255,255,0.1)',
+          border: '2px solid rgba(235, 80, 2, 0.6)',
           overflow: 'hidden',
           position: 'relative',
           background: '#000',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          boxShadow: '0 0 20px rgba(235, 80, 2, 0.3)'
         }}>
           <video 
             style={{ 
               width: '100%',
               height: '100%',
-              objectFit: 'contain',
-              transform: 'rotate(-90deg)',
-              maxWidth: '150%',
-              maxHeight: '150%'
+              objectFit: 'cover',
+              transform: 'rotate(-90deg)'
             }}
             controls
             controlsList="nodownload"
