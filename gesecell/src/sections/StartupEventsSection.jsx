@@ -52,12 +52,6 @@ export default function StartupEventsSection() {
                 <span className="scroll-stack-number">{String(idx + 1).padStart(2, '0')}</span>
                 <h3 className="scroll-stack-card-title">{event.title}</h3>
                 <p className="scroll-stack-card-desc">{event.desc}</p>
-                <a href="#" className="scroll-stack-link">
-                  <span>Learn More</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </a>
               </div>
               <div className="scroll-stack-visual">
                 <img src={event.image} alt={event.title} />

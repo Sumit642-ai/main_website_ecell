@@ -4,7 +4,7 @@ import SectionHeader from '../components/SectionHeader';
 export default function WhyGESSection() {
   return (
     <section id="why-ges" className="why-ges-section">
-      <SectionHeader subtitle="Beyond a conference" title="Why GES is important?" />
+      <SectionHeader subtitle="Beyond a conference" title="Why GES?" />
       <div className="why-ges-grid">
         <article className="why-ges-card">
           <span className="why-ges-pill">GES 2026</span>

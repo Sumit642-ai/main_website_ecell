@@ -80,8 +80,8 @@ export default function AboutSection() {
         justifyContent: 'center', 
         marginBottom: '4rem',
         padding: '0 2rem',
-        flexWrap: 'nowrap',
-        overflowX: 'auto'
+        flexWrap: 'wrap',
+        overflow: 'visible'
       }}>
         <video 
           style={{ 
@@ -91,7 +91,8 @@ export default function AboutSection() {
             aspectRatio: '16/9',
             borderRadius: '12px',
             border: '1px solid rgba(255,255,255,0.1)',
-            objectFit: 'cover'
+            objectFit: 'cover',
+            transform: 'rotate(180deg)'
           }}
           controls
           preload="metadata"
@@ -106,27 +107,13 @@ export default function AboutSection() {
             aspectRatio: '16/9',
             borderRadius: '12px',
             border: '1px solid rgba(255,255,255,0.1)',
-            objectFit: 'cover'
+            objectFit: 'cover',
+            transform: 'rotate(180deg)'
           }}
           controls
           preload="metadata"
         >
           <source src="/videos/v22.mp4" type="video/mp4" />
-        </video>
-        <video 
-          style={{ 
-            width: '100%', 
-            maxWidth: '400px',
-            minWidth: '280px',
-            aspectRatio: '16/9',
-            borderRadius: '12px',
-            border: '1px solid rgba(255,255,255,0.1)',
-            objectFit: 'cover'
-          }}
-          controls
-          preload="metadata"
-        >
-          <source src="/videos/v3.mp4" type="video/mp4" />
         </video>
       </div>
       
