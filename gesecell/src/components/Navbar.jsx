@@ -18,8 +18,8 @@ function Navbar() {
       </div>
 
       <div className="nav-center">
-        <Link to="/" className="nav-logo nav-logo-secondary" aria-label="IIT Bombay E-Cell home" onClick={closeNav}>
-          <img src={eCellLogo} alt="IIT Bombay E-Cell logo" />
+        <Link to="/" className="nav-logo nav-logo-secondary" aria-label="IIT Kharagpur E-Cell home" onClick={closeNav}>
+          <img src={eCellLogo} alt="IIT Kharagpur E-Cell logo" />
         </Link>
       </div>
 

@@ -41,6 +41,7 @@ const LandingPage = () => {
       <div className="video-background">
         <video
           ref={videoRef}
+          className="hero-video-desktop"
           autoPlay
           loop
           muted
@@ -48,6 +49,16 @@ const LandingPage = () => {
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         >
           <source src="/earth.mp4" type="video/mp4" />
+        </video>
+        <video
+          className="hero-video-mobile"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        >
+          <source src="/videos/phoneweb.webm" type="video/webm" />
         </video>
       </div>
       
