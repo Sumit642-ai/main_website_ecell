@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import gesLogo from '../assets/ges.png';
-const eCellLogo = '/e_cell.png';
+const eCellLogo = './videos/e_cell.png';
 import './CrazyHamburger.css';
 
 function Navbar() {
