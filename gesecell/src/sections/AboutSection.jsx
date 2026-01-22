@@ -83,38 +83,66 @@ export default function AboutSection() {
         flexWrap: 'wrap',
         overflow: 'visible'
       }}>
-        <video 
-          style={{ 
-            width: '100%', 
-            maxWidth: '400px',
-            minWidth: '280px',
-            aspectRatio: '16/9',
-            borderRadius: '12px',
-            border: '1px solid rgba(255,255,255,0.1)',
-            objectFit: 'cover',
-            transform: 'rotate(180deg)'
-          }}
-          controls
-          preload="metadata"
-        >
-          <source src="/videos/v11.mp4" type="video/mp4" />
-        </video>
-        <video 
-          style={{ 
-            width: '100%', 
-            maxWidth: '400px',
-            minWidth: '280px',
-            aspectRatio: '16/9',
-            borderRadius: '12px',
-            border: '1px solid rgba(255,255,255,0.1)',
-            objectFit: 'cover',
-            transform: 'rotate(180deg)'
-          }}
-          controls
-          preload="metadata"
-        >
-          <source src="/videos/v22.mp4" type="video/mp4" />
-        </video>
+        <div style={{
+          width: '100%',
+          maxWidth: '550px',
+          minWidth: '350px',
+          aspectRatio: '16/9',
+          borderRadius: '12px',
+          border: '1px solid rgba(255,255,255,0.1)',
+          overflow: 'hidden',
+          position: 'relative',
+          background: '#000',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <video 
+            style={{ 
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              transform: 'rotate(-90deg)',
+              maxWidth: '150%',
+              maxHeight: '150%'
+            }}
+            controls
+            controlsList="nodownload"
+            preload="metadata"
+          >
+            <source src="/videos/v11.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div style={{
+          width: '100%',
+          maxWidth: '550px',
+          minWidth: '350px',
+          aspectRatio: '16/9',
+          borderRadius: '12px',
+          border: '1px solid rgba(255,255,255,0.1)',
+          overflow: 'hidden',
+          position: 'relative',
+          background: '#000',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <video 
+            style={{ 
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              transform: 'rotate(-90deg)',
+              maxWidth: '150%',
+              maxHeight: '150%'
+            }}
+            controls
+            controlsList="nodownload"
+            preload="metadata"
+          >
+            <source src="/videos/v22.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
       
       <SectionHeader title="About GES" />

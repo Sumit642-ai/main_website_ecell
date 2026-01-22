@@ -21,6 +21,9 @@ function Navbar() {
         <Link to="/" className="nav-logo nav-logo-secondary" aria-label="IIT Kharagpur E-Cell home" onClick={closeNav}>
           <img src={eCellLogo} alt="IIT Kharagpur E-Cell logo" />
         </Link>
+        <Link to="/" className="nav-logo nav-logo-mobile" aria-label="IIT Kharagpur E-Cell home" onClick={closeNav}>
+          <img src={eCellLogo} alt="IIT Kharagpur E-Cell logo" />
+        </Link>
       </div>
 
       <div className="nav-right">

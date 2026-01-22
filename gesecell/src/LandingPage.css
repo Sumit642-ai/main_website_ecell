@@ -182,6 +182,17 @@
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
 }
 
+.nav-logo-mobile {
+  display: none;
+}
+
+.nav-logo-mobile img {
+  height: 42px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
 .mobile-nav-toggle {
   display: flex; /* Always visible */
   width: 40px;
@@ -426,11 +437,19 @@
   }
 
   .nav-center {
-    display: none;
+    display: flex;
   }
 
   .nav-logo img {
     height: 44px;
+  }
+
+  .nav-logo-secondary {
+    display: none;
+  }
+
+  .nav-logo-mobile {
+    display: flex;
   }
 
   .nav-logo-secondary img {
