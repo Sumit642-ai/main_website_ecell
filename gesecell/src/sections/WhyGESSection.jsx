@@ -16,13 +16,40 @@ export default function WhyGESSection() {
           </p>
           <ul className="why-ges-list">
             <li>
-              Massive exposure and networking: 3000+ student footfall, 60+ speakers/investors, participation from 3000+ startups nationwide.
+              3000+ attendees, 80+ speakers/investors, 3000+ startups nationwide
             </li>
             <li>
-              Beyond classrooms: speaker sessions, Professors' Meet-up, inter-college collaborations, and Intern Carnival (startup hiring platform).
+              Speaker sessions, Professors' Meet-up, inter-college collaborations & Intern Carnival
             </li>
             <li>
-              High-impact competitions and funding: Business Game, Invest-o-spective and more, with Rs 25 Lakhs+ prize pool and Rs 3Cr+ enabled funding.
+              Rs 25L+ prize pool, Rs 3Cr+ enabled funding through competitions
+            </li>
+          </ul>
+        </article>
+
+        <article className="why-ges-card">
+          <span className="why-ges-pill">For Startups</span>
+          <h3 className="why-ges-card-title">
+            Empowering early-stage ventures to scale
+          </h3>
+          <p className="why-ges-card-text">
+            Strategic mentorship, elite talent acquisition, and high-stakes exposure for ambitious founders.
+          </p>
+          <ul className="why-ges-list">
+            <li>
+              Recruit top talent via Intern Carnival from IIT Kharagpur & premier institutions
+            </li>
+            <li>
+              Validate your business model in high-impact competitions
+            </li>
+            <li>
+              80+ investors for mentorship, validation & strategic partnerships
+            </li>
+            <li>
+              Engage with seasoned founders on scaling & market trends
+            </li>
+            <li>
+              Showcase to 3000+ attendees including collaborators & early adopters
             </li>
           </ul>
         </article>
