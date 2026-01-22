@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import gesLogo from '../assets/ges.png';
+const eCellLogo = '/e_cell.png';
 import './CrazyHamburger.css';
 
 function Navbar() {
@@ -17,9 +18,9 @@ function Navbar() {
       </div>
 
       <div className="nav-center">
-        <a href="https://clients.forms.meraevents.ai/customForms/ges-2026" className="register-btn-nav primary-btn" onClick={closeNav} target="_blank" rel="noopener noreferrer">
-          REGISTER 
-        </a>
+        <Link to="/" className="nav-logo nav-logo-secondary" aria-label="IIT Bombay E-Cell home" onClick={closeNav}>
+          <img src={eCellLogo} alt="IIT Bombay E-Cell logo" />
+        </Link>
       </div>
 
       <div className="nav-right">

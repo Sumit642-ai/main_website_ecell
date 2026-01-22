@@ -73,6 +73,63 @@ export default function AboutSection() {
       ref={sectionRef}
       style={{ padding: '4rem 0', backgroundColor: '#000' }}
     >
+      {/* Video Gallery */}
+      <div style={{ 
+        display: 'flex', 
+        gap: '2rem', 
+        justifyContent: 'center', 
+        marginBottom: '4rem',
+        padding: '0 2rem',
+        flexWrap: 'nowrap',
+        overflowX: 'auto'
+      }}>
+        <video 
+          style={{ 
+            width: '100%', 
+            maxWidth: '400px',
+            minWidth: '280px',
+            aspectRatio: '16/9',
+            borderRadius: '12px',
+            border: '1px solid rgba(255,255,255,0.1)',
+            objectFit: 'cover'
+          }}
+          controls
+          preload="metadata"
+        >
+          <source src="/videos/v11.mp4" type="video/mp4" />
+        </video>
+        <video 
+          style={{ 
+            width: '100%', 
+            maxWidth: '400px',
+            minWidth: '280px',
+            aspectRatio: '16/9',
+            borderRadius: '12px',
+            border: '1px solid rgba(255,255,255,0.1)',
+            objectFit: 'cover'
+          }}
+          controls
+          preload="metadata"
+        >
+          <source src="/videos/v22.mp4" type="video/mp4" />
+        </video>
+        <video 
+          style={{ 
+            width: '100%', 
+            maxWidth: '400px',
+            minWidth: '280px',
+            aspectRatio: '16/9',
+            borderRadius: '12px',
+            border: '1px solid rgba(255,255,255,0.1)',
+            objectFit: 'cover'
+          }}
+          controls
+          preload="metadata"
+        >
+          <source src="/videos/v3.mp4" type="video/mp4" />
+        </video>
+      </div>
+      
       <SectionHeader title="About GES" />
       <div className="about-container">
         {/* Slot 1: 2 images slideshow with fade animation */}

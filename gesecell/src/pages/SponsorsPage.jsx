@@ -11,98 +11,87 @@ export default function SponsorsPage() {
       title: 'Title Partner',
       size: 'xl',
       sponsors: [
-        { name: 'Coming Soon', logo: null }
+        { name: 'Title Partner', logo: '/sponsors/titleparterner.png' }
       ]
     },
     {
-      title: 'Powered By',
+      title: 'Co-Title Partner',
       size: 'lg',
       sponsors: [
-        { name: 'Coming Soon', logo: null }
+        { name: 'Co-Title Partner', logo: '/sponsors/cotitilepartner.png.png' }
       ]
     },
     {
-      title: 'Co-Powered By',
+      title: 'Major Partner',
       size: 'lg',
       sponsors: [
-        { name: 'Coming Soon', logo: null }
+        { name: 'Major Partner', logo: '/sponsors/majorpartner.png.png' }
       ]
     },
     {
-      title: 'Associate Partner',
+      title: 'Strategic Partner',
       size: 'md',
       sponsors: [
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null }
+        { name: 'Strategic Partner', logo: '/sponsors/strategicpartner.png.png' }
       ]
     },
     {
-      title: 'Banking Partner',
+      title: 'Title Media Partner',
       size: 'md',
       sponsors: [
-        { name: 'Coming Soon', logo: null }
+        { name: 'Title Media Partner', logo: '/sponsors/Titlemediapartner.png.png' }
       ]
     },
     {
-      title: 'Outreach Partner',
+      title: 'Product Expo Title Partner',
       size: 'md',
       sponsors: [
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null }
+        { name: 'Product Expo Title Partner', logo: '/sponsors/productexpotitlepartner.png.png' }
       ]
     },
     {
-      title: 'Media Partner',
+      title: 'Associate Partners',
       size: 'md',
       sponsors: [
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null }
+        { name: 'Associate Partners', logo: '/sponsors/associatepartners.png.png' }
       ]
     },
     {
-      title: 'Hospitality Partner',
+      title: 'Media Partners',
       size: 'md',
       sponsors: [
-        { name: 'Coming Soon', logo: null }
+        { name: 'Media Partners', logo: '/sponsors/mediapartners.png.png' }
       ]
     },
     {
-      title: 'Technology Partner',
-      size: 'md',
-      sponsors: [
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null }
-      ]
-    },
-    {
-      title: 'Education Partner',
+      title: 'Corporate Partners',
       size: 'sm',
       sponsors: [
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null }
+        { name: 'Corporate Partner 1', logo: '/sponsors/coorporatepartner1.png' },
+        { name: 'Corporate Partner 2', logo: '/sponsors/coorporatepartners2.png' }
       ]
     },
     {
-      title: 'Ecosystem Partner',
+      title: 'Automobile Partners',
       size: 'sm',
       sponsors: [
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null }
+        { name: 'Automobile Partner 1', logo: '/sponsors/automobilepartners1.png' },
+        { name: 'Automobile Partner 2', logo: '/sponsors/automobilepartner2.png' },
+        { name: 'Automobile Partner 3', logo: '/sponsors/automobilepartner3.png' }
       ]
     },
     {
-      title: 'Community Partner',
+      title: 'Silver Sponsors 2023',
       size: 'sm',
       sponsors: [
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null },
-        { name: 'Coming Soon', logo: null }
+        { name: 'Silver Sponsors 2023', logo: '/sponsors/silversponsors2023.png.png' }
+      ]
+    },
+    {
+      title: 'Other Partners',
+      size: 'sm',
+      sponsors: [
+        { name: 'Other Partners', logo: '/sponsors/otherpartners.png.png' }
       ]
     }
   ];
@@ -111,7 +100,7 @@ export default function SponsorsPage() {
     {
       name: 'Divyansh Singh Solanki',
       role: 'Senior Manager',
-      focus: 'Corporate Relations',
+      focus: 'Corporate and Media Relations',
       email: 'singh.divyansh@ecell-iitkgp.in',
       phone: '7869709748',
       image: './divyansh.jpg',
@@ -119,16 +108,16 @@ export default function SponsorsPage() {
     {
       name: 'Samarth Sharma',
       role: 'Senior Manager',
-      focus: 'Corporate Relations| Public Relations',
-      email: 'sharma.samarth@ecell-iitkgp.org',
+      focus: 'Corporate and Media Relations| Public Relations',
+      email: 'sharma.samarth@ecell-iitkgp.in',
       phone: '8890054499',
       image: './samartth.png',
     },
     {
       name: 'Khush Duggar',
       role: 'Senior Manager',
-      focus: 'Corporate Relations| Social Media Marketing',
-      email: 'duggar.khush@ecell-iitkgp.org',
+      focus: 'Corporate and Media Relations| Social Media Marketing',
+      email: 'duggar.khush@ecell-iitkgp.in',
       phone: '9922168000',
       image: './khush.jpg',
     }

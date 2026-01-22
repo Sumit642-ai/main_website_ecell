@@ -209,13 +209,22 @@
 /* Responsiveness */
 @media (max-width: 768px) {
   .crazy-hamburger {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
+    background: rgba(8, 8, 8, 0.92);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.75), 0 0 14px rgba(255, 255, 255, 0.18);
   }
   
   .hamburger-box {
     width: 28px;
     height: 20px;
+  }
+  
+  .crazy-hamburger .hamburger-line {
+    background: #ffffff;
+    height: 3.2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   }
   
   .main-nav-menu {
@@ -226,13 +235,19 @@
 
 @media (max-width: 480px) {
   .crazy-hamburger {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
+    border-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.75), 0 0 10px rgba(255, 255, 255, 0.16);
   }
   
   .hamburger-box {
-    width: 24px;
+    width: 26px;
     height: 18px;
+  }
+  
+  .crazy-hamburger .hamburger-line {
+    height: 3.4px;
   }
   
   .main-nav-menu {

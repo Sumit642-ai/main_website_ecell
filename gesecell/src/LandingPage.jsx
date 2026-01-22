@@ -5,6 +5,7 @@ import './LandingPage.css';
 import './Sections.css';
 
 import AboutSection from './sections/AboutSection';
+import WhyGESSection from './sections/WhyGESSection';
 import ImpactStripSection from './sections/ImpactStripSection';
 import StartupEventsSection from './sections/StartupEventsSection';
 import EventsSection from './sections/EventsSection';
@@ -70,6 +71,7 @@ const LandingPage = () => {
         <div className="sections-wrap">
           <div className="sections-inner">
             <AboutSection />
+            <WhyGESSection />
             <ImpactStripSection />
             <StartupEventsSection />
             <CompetitionsSection />
