@@ -12,6 +12,7 @@ import EventsSection from './sections/EventsSection';
 import CompetitionsSection from './sections/CompetitionsSection';
 import PastSpeakersSection from './sections/PastSpeakersSection';
 import TestimonialsSection from './sections/TestimonialsSection';
+import VideoSection from './sections/VideoSection';
 import CTASection from './sections/CTASection';
 import FooterSection from './sections/FooterSection';
 
@@ -78,6 +79,8 @@ const LandingPage = () => {
           </div>
         </main>
 
+        <VideoSection />
+        
         <div className="section-transition" />
         <div className="sections-wrap">
           <div className="sections-inner">

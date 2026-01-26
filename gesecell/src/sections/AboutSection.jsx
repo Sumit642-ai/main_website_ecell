@@ -73,75 +73,7 @@ export default function AboutSection() {
       ref={sectionRef}
       style={{ padding: '4rem 0', backgroundColor: '#000' }}
     >
-      {/* Video Gallery */}
-      <div style={{ 
-        display: 'flex', 
-        gap: '2rem', 
-        justifyContent: 'center', 
-        marginBottom: '4rem',
-        padding: '0 2rem',
-        flexWrap: 'wrap',
-        overflow: 'visible'
-      }}>
-        <div style={{
-          width: '100%',
-          maxWidth: '550px',
-          minWidth: '350px',
-          aspectRatio: '16/9',
-          borderRadius: '12px',
-          border: '2px solid rgba(235, 80, 2, 0.6)',
-          overflow: 'hidden',
-          position: 'relative',
-          background: '#000',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-          <video 
-            style={{ 
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              transform: 'rotate(-90deg)'
-            }}
-            controls
-            controlsList="nodownload"
-            preload="metadata"
-          >
-            <source src="/videos/v11.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div style={{
-          width: '100%',
-          maxWidth: '550px',
-          minWidth: '350px',
-          aspectRatio: '16/9',
-          borderRadius: '12px',
-          border: '2px solid rgba(235, 80, 2, 0.6)',
-          overflow: 'hidden',
-          position: 'relative',
-          background: '#000',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 0 20px rgba(235, 80, 2, 0.3)'
-        }}>
-          <video 
-            style={{ 
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              transform: 'rotate(-90deg)'
-            }}
-            controls
-            controlsList="nodownload"
-            preload="metadata"
-          >
-            <source src="/videos/v22.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </div>
-      
+
       <SectionHeader title="About GES" />
       <div className="about-container">
         {/* Slot 1: 2 images slideshow with fade animation */}
