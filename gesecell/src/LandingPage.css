@@ -460,6 +460,8 @@
 @media (max-width: 640px) {
   .header-nav {
     padding: 0.55rem 0.6rem;
+    grid-template-columns: 1fr auto;
+    justify-items: stretch;
   }
 
   .nav-logo img {
@@ -468,6 +470,14 @@
 
   .nav-center {
     display: none;
+  }
+
+  .nav-left {
+    justify-content: flex-start;
+  }
+
+  .nav-right {
+    justify-content: flex-end;
   }
 
   .nav-logo-secondary img {
