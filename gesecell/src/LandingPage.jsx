@@ -79,10 +79,10 @@ const LandingPage = () => {
             </a>
           </div>
         </main>
-
+         <PosterSection />
         <VideoSection />
         
-        <PosterSection />
+        
 
         <div className="section-transition" />
         <div className="sections-wrap">
