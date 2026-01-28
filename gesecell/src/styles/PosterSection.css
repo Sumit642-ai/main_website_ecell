@@ -1,125 +1,121 @@
-/* Poster Section Styles */
+/* Simple Poster Carousel */
 .poster-section {
-  position: relative;
   padding: 4rem 0;
   background: #000;
-  overflow: hidden;
-  padding: 6rem 0;
-}
-
-.poster-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(235, 80, 2, 0.05), transparent 60%);
-  opacity: 0.4;
-  pointer-events: none;
+  color: #fff;
 }
 
 .poster-section-inner {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
-  position: relative;
-  z-index: 2;
+  padding: 0 1.5rem;
 }
 
-.poster-scroll-container {
-  width: 100%;
+.carousel-container {
+  position: relative;
+  max-width: 520px;
+  margin: 2.5rem auto 1rem;
   overflow: hidden;
-  position: relative;
-  margin-top: 4rem;
-  padding: 2rem 0;
 }
 
-.poster-scroll-container::before,
-.poster-scroll-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 100px;
-  height: 100%;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.poster-scroll-container::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.95), transparent);
-}
-
-.poster-scroll-container::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.95), transparent);
-}
-
-.poster-scroll {
+.carousel-wrapper {
   display: flex;
-  gap: 2rem;
-  will-change: transform;
+  transition: transform 0.4s ease;
+  touch-action: pan-y;
 }
 
-.poster-item {
-  flex: 0 0 auto;
-  width: 300px;
-  height: 400px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  border: 1px solid rgba(235, 80, 2, 0.2);
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(235, 80, 2, 0.35);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(235, 80, 2, 0.2);
+  border: 1px solid rgba(235, 80, 2, 0.6);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.prev-btn {
+  left: 8px;
+}
+
+.next-btn {
+  right: 8px;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(235, 80, 2, 0.3);
+  border: 1px solid rgba(235, 80, 2, 0.6);
   cursor: pointer;
 }
 
-.poster-item:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: rgba(235, 80, 2, 0.6);
-  box-shadow: 0 20px 60px rgba(235, 80, 2, 0.25);
+.indicator.active {
+  background: rgba(235, 80, 2, 0.9);
 }
 
-.poster-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.carousel-counter {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.carousel-counter .current {
+  color: #fff;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
-  .poster-section {
-    padding: 4rem 0;
+  .carousel-container {
+    max-width: 90%;
   }
 
-  .poster-item {
-    width: 220px;
-    height: 300px;
-  }
-
-  .poster-scroll {
-    gap: 1rem;
-  }
-
-  .poster-scroll-container::before,
-  .poster-scroll-container::after {
-    width: 60px;
+  .carousel-slide {
+    height: 420px;
   }
 }
 
 @media (max-width: 480px) {
-  .poster-section {
-    padding: 3rem 0;
-  }
-
-  .poster-item {
-    width: 180px;
-    height: 250px;
-  }
-
-  .poster-scroll {
-    gap: 0.8rem;
-  }
-
-  .poster-scroll-container::before,
-  .poster-scroll-container::after {
-    width: 40px;
+  .carousel-slide {
+    height: 360px;
   }
 }

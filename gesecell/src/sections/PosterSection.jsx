@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import React, { useRef, useState } from 'react';
 import SectionHeader from '../components/SectionHeader';
 import '../styles/PosterSection.css';
 
 export default function PosterSection() {
   const containerRef = useRef(null);
-  const scrollRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
 
   const posters = [
     'ph1.png',
@@ -17,57 +17,97 @@ export default function PosterSection() {
     'ph7.png',
   ];
 
-  useEffect(() => {
-    if (!scrollRef.current) return;
+  const handleNext = () => {
+    if (currentIndex < posters.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
 
-    // Wait for images to load before calculating dimensions
-    const scroll = scrollRef.current;
-    const images = scroll.querySelectorAll('img');
-    
-    if (images.length === 0) return;
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
 
-    // Use a small delay to ensure layout is calculated
-    const timer = setTimeout(() => {
-      const scrollWidth = scroll.scrollWidth;
-      const clientWidth = scroll.clientWidth;
-      const distance = scrollWidth - clientWidth;
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
 
-      if (distance > 0) {
-        // Animate the scroll horizontally continuously
-        gsap.to(scroll, {
-          x: -distance,
-          duration: 25,
-          ease: 'none',
-        });
-      }
-    }, 100);
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    if (!touchStart || !touchEndX) return;
 
-    return () => {
-      clearTimeout(timer);
-      gsap.killTweensOf(scroll);
-    };
-  }, []);
+    const distance = touchStart - touchEndX;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+  };
 
   return (
     <section className="poster-section" ref={containerRef}>
       <div className="poster-section-inner">
         <SectionHeader
-          title="Poster Gallery"
-          
+          title="Event Moments"
+          subtitle="Explore highlights from our exclusive events"
         />
 
-        <div className="poster-scroll-container">
-          <div className="poster-scroll" ref={scrollRef}>
+        <div className="carousel-container">
+          <button
+            className="carousel-btn prev-btn"
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+            aria-label="Previous poster"
+          >
+            ‹
+          </button>
+
+          <div
+            className="carousel-wrapper"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
             {posters.map((poster, idx) => (
-              <div key={idx} className="poster-item">
+              <div key={idx} className="carousel-slide">
                 <img
                   src={`/poster/${poster}`}
-                  alt={`Poster ${idx + 1}`}
+                  alt={`Event Moment ${idx + 1}`}
                   loading="lazy"
                 />
               </div>
             ))}
           </div>
+
+          <button
+            className="carousel-btn next-btn"
+            onClick={handleNext}
+            disabled={currentIndex === posters.length - 1}
+            aria-label="Next poster"
+          >
+            ›
+          </button>
+        </div>
+
+        <div className="carousel-indicators">
+          {posters.map((_, idx) => (
+            <button
+              key={idx}
+              className={`indicator ${idx === currentIndex ? 'active' : ''}`}
+              onClick={() => setCurrentIndex(idx)}
+              aria-label={`Go to moment ${idx + 1}`}
+            />
+          ))}
+        </div>
+
+        <div className="carousel-counter">
+          <span className="current">{currentIndex + 1}</span>
+          <span className="divider">/</span>
+          <span className="total">{posters.length}</span>
         </div>
       </div>
     </section>
