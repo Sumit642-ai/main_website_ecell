@@ -34,8 +34,42 @@
   margin-top: 0.5rem;
 }
 
-.testimonials-container {
+/* Desktop Carousel - 3 Cards Layout */
+.desktop-carousel {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  width: 100%;
+}
+
+.desktop-carousel-container {
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.desktop-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.desktop-testimonial-card {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.desktop-dots {
+  display: flex;
+  justify-content: center;
+}
+
+/* Hidden desktop marquee for backward compatibility */
+.testimonials-container {
+  display: none;
   flex-direction: column;
   gap: 2rem;
   position: relative;
@@ -265,10 +299,22 @@
   display: none;
 }
 
+/* Tablet view - 2 cards */
+@media (max-width: 1200px) {
+  .desktop-cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .desktop-carousel-container {
+    padding: 0 1rem;
+  }
+}
+
 /* Mobile Testimonials Redesign */
 @media (max-width: 768px) {
-  /* Hide desktop marquee */
-  .testimonials-container {
+  /* Hide desktop carousel */
+  .desktop-carousel {
     display: none;
   }
   

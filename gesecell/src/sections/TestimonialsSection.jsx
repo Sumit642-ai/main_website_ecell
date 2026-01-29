@@ -41,6 +41,75 @@ const TestimonialCard = ({ testimonial }) => (
   </div>
 );
 
+const DesktopCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 3000);
+  };
+
+  const getVisibleCards = () => {
+    const cards = [];
+    for (let i = 0; i < 3; i++) {
+      const index = (currentIndex + i) % testimonials.length;
+      cards.push(testimonials[index]);
+    }
+    return cards;
+  };
+
+  return (
+    <div
+      className="desktop-carousel"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <motion.div
+        className="desktop-carousel-container"
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="desktop-cards-wrapper">
+          {getVisibleCards().map((testimonial, index) => (
+            <motion.div
+              key={index}
+              className="desktop-testimonial-card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <TestimonialCard testimonial={testimonial} />
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Navigation Dots */}
+      <div className="carousel-dots desktop-dots">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            className={`dot ${index === currentIndex ? "active" : ""}`}
+            onClick={() => goToSlide(index)}
+            aria-label={`Go to testimonial group ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const MobileTestimonialCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
@@ -142,42 +211,8 @@ const TestimonialsSection = () => {
     <section className="testimonials-section">
        <SectionHeader title="Testimonials" />
       
-      {/* Desktop Marquee */}
-      <div className="testimonials-container">
-        {/* Row 1 - Moving Left */}
-        <div className="marquee-row">
-          <motion.div 
-            className="marquee-content"
-            animate={{ x: [0, -1000] }}
-            transition={{ 
-              repeat: Infinity, 
-              ease: "linear", 
-              duration: 20 
-            }}
-          >
-            {[...testimonials, ...testimonials].map((t, i) => (
-              <TestimonialCard key={`row1-${i}`} testimonial={t} />
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Row 2 - Moving Right */}
-        <div className="marquee-row">
-          <motion.div 
-            className="marquee-content"
-            animate={{ x: [-1000, 0] }}
-            transition={{ 
-              repeat: Infinity, 
-              ease: "linear", 
-              duration: 25 
-            }}
-          >
-            {[...testimonials, ...testimonials].map((t, i) => (
-              <TestimonialCard key={`row2-${i}`} testimonial={t} />
-            ))}
-          </motion.div>
-        </div>
-      </div>
+      {/* Desktop Carousel - 3 Cards at a Time */}
+      <DesktopCarousel />
 
       {/* Mobile Carousel */}
       <MobileTestimonialCarousel />
