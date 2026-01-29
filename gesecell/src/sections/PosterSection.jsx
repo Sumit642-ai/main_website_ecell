@@ -15,6 +15,7 @@ export default function PosterSection() {
     'ph5.png',
     'ph6.png',
     'ph7.png',
+    'ph8.png',
   ];
 
   const handleNext = () => {
