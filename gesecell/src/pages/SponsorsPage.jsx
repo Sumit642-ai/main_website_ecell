@@ -220,7 +220,7 @@ export default function SponsorsPage() {
   },
   {
     title: 'Co-Title Partner',
-    size: '10px',
+    size: 'xl',
     sponsors: [
       { name: 'Co-Title Partner', logo: '/sponsor26/C0_Title_Partner_2026.png' }
     ]
