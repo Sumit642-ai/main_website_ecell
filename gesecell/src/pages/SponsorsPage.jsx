@@ -250,16 +250,22 @@ export default function SponsorsPage() {
       ]
     },
     {
-      title: 'CAP Title Partners',
+      title: 'CAP Title Partner',
       size: 'md',
       sponsors: [
-        { name: 'CAP Title Partner 1', logo: '/sponsor26/CAP_Title_Partner_1_2026.png', link: 'https://blessedbharat.com/' },
-        { name: 'CAP Title Partner 2', logo: '/sponsor26/CAP_Title_Partner_2_2026.png' },
-        { name: 'CAP Title Partner 3', logo: '/sponsor26/CAP_Title_Partner_3_2026.png', link: 'https://www.mountaintribe.in/' },
-        { name: 'CAP Title Partner 4', logo: '/sponsor26/CAP_Title_Partner_4_2026.png', link: 'https://giftkyade.com/' },
-        { name: 'CAP Title Partner 5', logo: '/sponsor26/CAP_Title_Partner_5_2026.png', link: 'https://nutribs.com/' },
-        { name: 'CAP Title Partner 6', logo: '/sponsor26/CAP_Title_Partner_6_2026.jpeg', link: 'https://teinpro.com/' },
-        { name: 'CAP Title Partner 7', logo: '/sponsor26/CAP_Title_Partner_7_2026.jpeg', link: 'https://pulseband.in/' }
+        { name: 'CAP Title Partner', logo: '/sponsor26/CAP_Title_Partner_7_2026.jpeg', link: 'https://pulseband.in/' }
+      ]
+    },
+    {
+      title: 'Cap Partner',
+      size: 'md',
+      sponsors: [
+        { name: 'Cap Partner 1', logo: '/sponsor26/CAP_Title_Partner_1_2026.png', link: 'https://blessedbharat.com/' },
+        { name: 'Cap Partner 2', logo: '/sponsor26/CAP_Title_Partner_2_2026.png' },
+        { name: 'Cap Partner 3', logo: '/sponsor26/CAP_Title_Partner_3_2026.png', link: 'https://www.mountaintribe.in/' },
+        { name: 'Cap Partner 4', logo: '/sponsor26/CAP_Title_Partner_4_2026.png', link: 'https://giftkyade.com/' },
+        { name: 'Cap Partner 5', logo: '/sponsor26/CAP_Title_Partner_5_2026.png', link: 'https://nutribs.com/' },
+        { name: 'Cap Partner 6', logo: '/sponsor26/CAP_Title_Partner_6_2026.jpeg', link: 'https://teinpro.com/' }
       ]
     },
     {
